@@ -1,0 +1,206 @@
+@font-face {
+  font-family: "gandhi sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/gandhi-sans.ttf), url(../fonts/gandhi-serif.eot);
+}
+@font-face {
+  font-family: "gandhi sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/gandhi-bold-sans.ttf), url(../fonts/gandhi-bold-sans.eot);
+}
+@font-face {
+  font-family: "gandhi serif";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/gandhi-serif.ttf), url(../fonts/gandhi-serif.eot);
+}
+@font-face {
+  font-family: "gandhi serif";
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/gandhi-bold-serif.ttf), url(../fonts/gandhi-bold-serif.eot);
+}
+body {
+  font-size: 14px;    
+  background: url(../img/notebook.png);  
+}
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "gandhi sans", helvetica, sans-serif;
+}
+.btn {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+}
+.container {
+  max-width: 920px;
+}
+
+.navbar {  
+  font-family: 'Dosis', sans-serif;
+  margin-left:auto;
+  margin-right:auto;
+  width: 60%;
+}
+
+#socialMediaIcons {
+  /*Apply grey scale filter to icons*/
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+  margin-right: auto;
+  margin-left: auto;
+  width: 150px;
+}
+
+/*.navbar {
+  background: #111;
+  padding: 0.3em 0;
+}
+.navbar .navbar-brand {
+  color: #fff;
+  font-family: "gandhi serif", georgia, serif;
+  font-weight: bold;
+}
+.navbar ul.nav li a {
+  color: #fff;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 1.5em;
+}
+.navbar ul.nav li button {
+  margin: 0.7em 0 0 1em;
+}*/
+.jumbotron {
+  background: url(../img/noisy_net.png);  
+  color: #fff;
+  padding: 6.5em 0 6em;
+  text-align: left;
+}
+
+.jumbotron p {
+  text-align: left;;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.jumbotron h1 {
+  /*font-family: "gandhi serif", georgia, serif;*/
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px #000;
+}
+.jumbotron h2 {
+  font-size: 1.2em;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.4em;
+  margin-bottom: 1.4em;
+}
+.jumbotron .btn {
+  box-shadow: 1px 1px 3px #000;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0.3em 2.5em 0.5em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.jumbotron .btn .glyphicon {
+  margin-left: 0.2em;
+  position: relative;
+  top: 3px;
+}
+.sect-border {
+  border-top: 2px dashed #d6d6d6;
+  border-bottom: 2px dashed #f6f6f6;
+  margin: 2em 8% 2.4em;
+}
+.subhead {
+  color: #000;
+  /*font-family: "gandhi serif", georgia, serif;*/
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  margin: 0.3em 0;
+}
+.benefit {
+  margin: 0.8em 0;
+  text-align: center;
+}
+.benefit .benefit-ball {
+  background: #428bca;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  line-height: 1em;
+  padding: 3em;
+}
+.benefit .benefit-ball .glyphicon {
+  font-size: 4em;
+  position: relative;
+  top: -3px;
+  right: 1px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.benefit h3 {
+  color: #000;
+  /*font-family: "gandhi serif", georgia, serif;*/
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc); 
+  background-image:    -moz-linear-gradient(left, #ccc, #333, #ccc); 
+  background-image:     -ms-linear-gradient(left, #ccc, #333, #ccc); 
+  background-image:      -o-linear-gradient(left, #ccc, #333, #ccc);  
+  width: 60%;
+}
+
+.benefit i {
+  color: #696969;
+}
+
+#slideshow {
+  margin: 0.5em 0 1.5em;
+}
+#slideshow .carousel-inner img {
+  background: #000;
+  height: 500px;
+  width: 100%;
+}
+footer {
+  /*background: #111;*/
+/*  color: #fff;
+  margin: 3.5em 0 0;
+  padding: 1.5em 0 0.8em;*/
+}
+
+@media screen and (max-width: 768px) {
+  .navbar ul.nav li {
+    text-align: center;
+  }
+  .navbar ul.nav li button {
+    margin: 1em 0;
+  }
+  .jumbotron {
+    font-size: 14px;
+    padding: 6em 0 4em;
+  }
+  .benefit {
+    margin-bottom: 2em;
+  }
+}
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+  .jumbotron {
+    font-size: 12px;
+  }
+}
