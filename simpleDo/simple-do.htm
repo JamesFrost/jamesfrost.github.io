@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>    
   <meta charset="utf-8">
   <title>Simple Do &mdash; JAMES FROST</title>
   <meta name = "description" content="A simple, open source 'To-Do' application for Android, with an emphasis on minimalism. Available free, for Android 4.0.1 and up." />
@@ -8,14 +8,26 @@
   <meta name = "author" content = "James Frost" />
   <meta name = "viewport" content = "width=device-width, initial-scale=1.0">  
 
-  <link rel="icon" href="img/simpleDoIcon.png" type="image/gif" sizes="16x16 32x32">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="img/simpleDoIcon.png" type="image/gif" sizes="16x16 32x32">  
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/strapped.css" rel="stylesheet">  
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
   <link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>  
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+  <script src="jquery.smoothState.js"></script>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("#SimpleDoHeaderTitle").fadeIn(1500);
+    $("#SimpleDoHeaderBody").fadeIn(3000);
+    $("#SimpleDoHeaderBodyImage").fadeIn(3000);      
+  });
+  </script>
+
 </head>
 <body>
   <div class = "navbar navbar-default">
@@ -35,40 +47,39 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div>  
 
-  <div id="top" class="jumbotron">
+  <div class="jumbotron">
     <div class="container">
-
       <div class = "row">
-        <div class="col-lg-6 col-lg-offset-1 col-sm-8 col-xs-0">       
-          <h1>SimpleDo</h1>   
-          <p>A simple, open source 'To-Do' application for Android, with an emphasis on minimalism. Available free, for Android 4.0.1 and up.</p>
-          <br>
-          <div class="btn-group btn-group-justified">
-            <div class="btn-group">
-              <p><a href="https://sourceforge.net/projects/simpledo/" class="btn btn-warning btn-lg" role="button"><i class="fa fa-download"></i> Download</a>
-              </div>
+        <div class="col-lg-6 col-lg-offset-1 col-md-8 col-sm-8 col-xs-12">               
+          <div id = "SimpleDoHeaderTitle" style="display:none">
+            <h1>SimpleDo</h1>
+          </div>
+          <div id = "SimpleDoHeaderBody" style="display:none">
+            <p>A simple, open source 'To-Do' application for Android, with an emphasis on minimalism. Available free, for Android 4.0.1 and up.</p>
+            <br>
+            <div class="btn-group btn-group-justified">
               <div class="btn-group">
-                <a href="https://github.com/JamesFrost/SimpleDo"class="btn btn-warning btn-lg" role="button"><i class="fa fa-github"></i> GitHub</a></p>
+                <p><a href="http://play.google.com/store/apps/details?id=me.jamesfrost.simpledo" class="btn btn-warning btn-lg" role="button"><i class="fa fa-android"></i> Download</a>
+                </div>
+                <div class="btn-group">
+                  <a href="http://github.com/JamesFrost/SimpleDo"class="btn btn-warning btn-lg" role="button"><i class="fa fa-github"></i> GitHub</a></p>
+                </div>
               </div>
             </div>
-
-          </div>      
-
-          <!-- <div class="row"> -->
-          <div class="col-lg-4 col-sm-4 col-xs-12">
-            <img src="img/simpleDoScreenShot.png" class="img-responsive">
+          </div>                
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+            <div id = "SimpleDoHeaderBodyImage" style="display:none">
+              <img src="img/simpleDoScreenShot.png" class="img-responsive">
+            </div>
           </div>
         </div>
-
       </div> 
     </div> <!-- /.jumbotron -->
 
     <div class="container">
-
       <h3 id="tour" class="subhead">Features</h3><br>
-
       <div class="row">
         <div class="col-md-4 col-sm-6 benefit">
           <i class = "fa fa-clock-o fa-2x"></i>
@@ -142,17 +153,14 @@
 
       <div class="btn-group btn-group-justified">
         <div class="row">
-          <!-- <div class="col-md-4 col-md-offset-2"> -->
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <a href="https://sourceforge.net/projects/simpledo/" class="btn btn-warning btn-lg" role="button"><i class="fa fa-download"></i>  Download</a>             
+          <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
+            <a href="http://play.google.com/store/apps/details?id=me.jamesfrost.simpledo" class="btn btn-warning btn-lg" role="button"><i class="fa fa-android"></i>  Download</a><br>
           </div>
-          <!-- <div class="col-md-4"> -->
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <a href="https://github.com/JamesFrost/SimpleDo"class="btn btn-warning btn-lg" role="button"><i class="fa fa-github"></i> GitHub</a>
+          <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
+            <a href="http://github.com/JamesFrost/SimpleDo"class="btn btn-warning btn-lg" role="button"><i class="fa fa-github"></i> GitHub</a>
           </div>   
         </div> <!-- /.col-md-10 -->
       </div> <!-- /.row -->
-
     </div> <!-- /.container -->
 
     <script src="js/jquery.js"></script>
@@ -169,7 +177,7 @@
     <hr>
   </body>
 
-  <footer>
+  <footer>  
     <div class = "row">
      <div id = "socialMediaIcons">
       <div class = "col-lg-4 col-sm-4 col-xs-4">

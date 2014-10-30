@@ -1,70 +1,19 @@
 /*
- * Keyframes
- */
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-}
-
-/*
- * CSS Page Transitions
+ * CSS Animations
  * Don't forget to add vendor prefixes!
  */
-.m-scene {
-  /** Basic styles for an animated element */
-  .scene_element {
-    animation-duration: 0.25s;
-    transition-timing-function: ease-in;
-    animation-fill-mode: both;
+.m-scene .scene_element {
+  -webkit-animation-duration: 0.25s;
+  -webkit-transition-timing-function: ease-in;
+  -webkit-animation-fill-mode: both;
+}
 
-  }
+.m-scene .scene_element--fadein {
+  -webkit-animation-name: fadeIn;
+}
 
-  /** An element that fades in */
-  .scene_element--fadein {
-    animation-name: fadeIn;
-  }
-
-  /** An element that fades in and slides up */
-  .scene_element--fadeinup {
-    animation-name: fadeInUp;
-  }
-
-  /** An element that fades in and slides from the right */
-  .scene_element--fadeinright {
-    animation-name: fadeInRight;
-  }
+.m-scene.is-exiting .scene_element {
+  -webkit-animation-direction: alternate-reverse;
 }
 
 .thumbnail {
@@ -129,12 +78,12 @@ img:hover {
 	float: right;
 }
 
-#projects {
+/*#projects {
 	margin-right: auto;
 	margin-left: auto;
 	width:504px;
 }
-
+*/
 .projectContainer {
 	height:250px;
 	width:250px;		
