@@ -52,7 +52,7 @@
 
 		<br>
 	</div>
-	<hr style = "width:75%">
+
 	<h3>Dependencies</h3>
 	<p>
 		<ul>
@@ -60,7 +60,7 @@
 			<li><a href = "http://help.sentiment140.com/api">sentiment140 API</a></li>
 		</ul>
 	</p>
-	<hr style = "width:75%">
+
 	<h3>Configuration</h3>
 	<p>
 		To configure sentiBotr for use, add your Twitter OAuth credentials to the <b><a href = "http://github.com/JamesFrost/sentiBotr/blob/master/src/twitter4j.properties">twitter4j.properties</a></b> file. This will allow twitter4j to connect to the Twitter API.<br>
@@ -68,14 +68,14 @@
 	<p>
 		You can further configure the bot by changing the values in the <b><a href="http://github.com/JamesFrost/sentiBotr/blob/master/src/Constants.java">constants interface</a></b>.
 	</p>
-	<hr style = "width:75%">
+
 	<h3>Hosting</h3>
 	<p>
 		Currently, I am hosting my bot on an Amazon Web Services Linux micro instance. The bash script below runs the jar, and is executed every hour by a cron job.
 	</p>
 
 	<script src="https://gist.github.com/JamesFrost/ec5d542bae9f922e7a5c.js"></script>
-	<hr style = "width:75%">
+
 	<h3>Logs</h3>
 	<p>
 		The log updates everytime the program is run; if no tweets are sent, a warning is logged. An example is shown below.
