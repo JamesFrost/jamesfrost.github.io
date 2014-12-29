@@ -22,6 +22,10 @@ hr {
 	text-align: center;	
 }
 
+#main {
+	display: none;
+}
+
 #projects-grid {
 	margin-left: auto;
 	margin-right: auto;
@@ -118,37 +122,4 @@ img {
 		color: #818286;
 		background-color: #ffffff;
 	}
-}
-
-
-
-
-
-
-
-
-/*
- * CSS Animations
- * Don't forget to add vendor prefixes!
- */
-.m-scene .scene_element {
-  animation-duration: 0.25s;
-  transition-timing-function: ease-in;
-  animation-fill-mode: both;
-}
-
-.m-scene .scene_element--fadein {
-  animation-name: fadeIn;
-}
-
-.m-scene.is-exiting .scene_element {
-  animation-direction: alternate-reverse;
-}
-
-/*
- * Keyframes
- */
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
 }
