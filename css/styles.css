@@ -42,7 +42,7 @@ span {
 	color: rgb(188, 189, 193);
 	font-size: 20px;
 	padding-bottom: 15px;
-		margin-left: auto;
+	margin-left: auto;
 	margin-right: auto;
 	width: 75%;
 }
@@ -62,7 +62,29 @@ img {
 	float: left;
 }
 
+#about-content {
+	margin-left: auto;
+	margin-right: auto;
+	width: 55%;
+}
 
+#face {
+	padding-right: 15px;
+}
+
+#copyright {
+	font-size: 15px;
+}
+
+#cv-content {
+	margin-left: auto;
+	margin-right: auto;
+	width: 55%;
+}
+
+#cv-content.hr {
+	width:75%;
+}
 
 .navbar-default {
 	background-color: #ffffff;
