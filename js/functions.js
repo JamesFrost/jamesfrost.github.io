@@ -2,6 +2,18 @@ $(document).ready(function(){
 	$("#main").fadeIn("fast");
 });
 
-$(window).unload(function () {
-	$("main").fadeOut(3000);
+$(document).on("click", "a", function () {
+
+	var newUrl = $(this).attr("href");
+
+	if (!newUrl || newUrl[0] === "#") {
+		location.hash = newUrl;
+		return;
+	}
+
+	$("#main").fadeOut("fast", function () {
+		location = newUrl;
+	});
+
+	return false;
 });
