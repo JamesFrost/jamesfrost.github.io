@@ -1,8 +1,22 @@
 body {
 	font-family: 'Dosis', sans-serif;
+	color: rgb(129, 130, 134);
 	margin-left:auto;
 	margin-right:auto;
 	padding-top: 70px;
+}
+
+body h1, h2, h3, h4 {
+	color: rgb(64, 64, 64);
+}
+
+#main a {
+	color: rgb(132, 124, 106);
+	font-weight: bold;
+}
+
+#main i {
+	/*color: rgb(166, 141, 93);*/
 }
 
 hr {
@@ -51,6 +65,10 @@ span {
 	color: rgb(129, 130, 134);
 }
 
+#loading {
+	padding-top: 15px;
+}
+
 img:hover {
 	opacity:1.0;
 	filter:alpha(opacity=100);  /*For IE8 and earlier */
@@ -83,11 +101,28 @@ img {
 }
 
 ul {
-  list-style-position: initial;
+  padding: none;
 }
 
 #cv-content.hr {
 	width:75%;
+}
+
+#project-content {
+		margin-left: auto;
+	margin-right: auto;
+	width:65%;
+}
+
+#project-links {
+	padding-top: 40px;
+		margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+}
+
+.project-features {
+	padding-top: 25px;
 }
 
 .navbar-default {
