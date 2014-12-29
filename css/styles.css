@@ -58,6 +58,10 @@ span {
 	padding-bottom: 15px;
 	margin-left: auto;
 	margin-right: auto;
+	width: 40%;
+}
+
+footer hr {
 	width: 75%;
 }
 
