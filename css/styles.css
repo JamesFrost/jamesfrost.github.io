@@ -82,6 +82,10 @@ img {
 	width: 55%;
 }
 
+ul {
+  list-style-position: initial;
+}
+
 #cv-content.hr {
 	width:75%;
 }
