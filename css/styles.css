@@ -1,3 +1,7 @@
+html {
+	overflow-y: scroll; 
+}
+
 body {
 	font-family: 'Dosis', sans-serif;
 	color: rgb(129, 130, 134);
@@ -46,19 +50,26 @@ hr {
 	width: 55%;
 }
 
+.project-link-icon-bg {
+	color: rgb(166, 141, 93);
+}
+
 span {
 	background-color: white; 
 	position: relative; 
 	top: -0.5em;	
 }
 
-#footer-social-icons {
-	color: rgb(188, 189, 193);
+#footer-social-icons {	
 	font-size: 20px;
 	padding-bottom: 15px;
 	margin-left: auto;
 	margin-right: auto;
 	width: 40%;
+}
+
+#footer-social-icons a {
+	color: rgb(188, 189, 193);
 }
 
 footer hr {
@@ -73,13 +84,16 @@ footer hr {
 	padding-top: 15px;
 }
 
-img:hover {
+#projects-grid img:hover {
 	opacity:1.0;
 	filter:alpha(opacity=100);  /*For IE8 and earlier */
 }
 
-img {
+#projects-grid img {
 	opacity:0.75;	
+}
+
+img {
 	display: inline;	
 	float: left;
 }
@@ -105,7 +119,7 @@ img {
 }
 
 ul {
-  padding: none;
+	padding: none;
 }
 
 #cv-content.hr {
@@ -113,15 +127,19 @@ ul {
 }
 
 #project-content {
-		margin-left: auto;
+	margin-left: auto;
 	margin-right: auto;
 	width:65%;
 }
 
 #project-links {
 	padding-top: 40px;
-		margin-left: auto;
+	margin-left: auto;
 	margin-right: auto;
+	width: 75%;
+}
+
+#project-links hr {
 	width: 75%;
 }
 
@@ -133,12 +151,12 @@ ul {
 	background-color: #ffffff;
 	border-color: #ffffff;
 }
-.navbar-default .navbar-brand {
-	color: #bcbdc1;
+/*.navbar-default .navbar-brand {
+color: #bcbdc1;
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-	color: #818286;
-}
+color: #818286;
+}*/
 .navbar-default .navbar-text {
 	color: #bcbdc1;
 }
