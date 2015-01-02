@@ -72,6 +72,16 @@ span {
 	color: rgb(188, 189, 193);
 }
 
+.btn-primary {
+	background-color: rgb(166, 141, 93);
+	border-color: rgb(166, 141, 93);
+}
+
+.btn-primary:hover {
+	background-color: rgb(132, 124, 106);
+	border-color: rgb(132, 124, 106);
+}
+
 footer hr {
 	width: 75%;
 }
@@ -93,6 +103,11 @@ footer hr {
 	opacity:0.75;	
 }
 
+.project-buttons {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
 img {
 	display: inline;	
 	float: left;
@@ -106,6 +121,7 @@ img {
 
 #face {
 	padding-right: 15px;
+	padding-top: 15px;
 }
 
 #copyright {
