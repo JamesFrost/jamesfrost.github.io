@@ -74,7 +74,6 @@ span {
 }
 
 .btn-primary:hover, .btn-primary:focus, .open .dropdown-toggle.btn-primary {
-
 	background-color: rgb(132, 124, 106);
 	border-color: rgb(132, 124, 106);
 }
