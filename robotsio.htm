@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>IS WIFI SAFE - JAMES FROST</title>
+	<title>ROBOTS.IO - JAMES FROST</title>
 	<meta charset="utf-8" />
 	<meta name = "description" content="James Frost is a Computer Science student from London interested in programming and design." />
 	<meta name = "keywords" content="James Frost, student, computer, science, personal, website" />
@@ -49,29 +49,28 @@
 
 				<div class="row">					
 					<div class="col-lg-8 col-md-8 col-md-push-4 col-sm-6 col-sm-push-6 col-xs-12">
-						<h1>Is Wifi Safe</h1>			
-						<p class="text-muted hidden-xs">Started in 2012 and completed in 2013, this project was done for the Extended Project Qualification alongside my A-Levels. When the project was completed, a presentation was given, which included practical Wi-Fi hacking examples.</p>				
+						<h1>Robots.io</h1>			
+						<p class="text-muted hidden-xs">Java library designed to make parsing a websites 'robots.txt' file easy.</p>				
 					</div>
 
 					<div class="col-xs-2 visible-xs"></div>
 					<div class="col-lg-4 col-lg-pull-8 col-md-4 col-md-pull-8 col-sm-6 col-sm-pull-6 col-xs-8">
-						<img src="img/projects/iswifisafe/bigLogo.png" class="img-responsive">
+						<img src="img/projects/robotsio/org.png" class="img-responsive">
 					</div>
 
 					<div class="col-lg-12 col-sm-12 col-xs-12" style="padding-top: 15px;">
 						<div class="row">
 							<div class="col-lg-12 project-buttons">
-								<p><a class="btn btn-primary btn-lg btn-block" target="_blank" href="pdf/iswifisafe.pdf" role="button"><i class="fa fa-file-pdf-o"></i> Dissertation</a></p>
+								<p><a class="btn btn-primary btn-lg btn-block" href="https://sourceforge.net/projects/robotsio/files/latest/download" role="button"><i class="fa fa-download"></i> Download</a></p>
 							</div>
 
 							<div class="col-lg-12 project-buttons">
-								<p><a class="btn btn-primary btn-lg btn-block" target="_blank" href="https://dl.dropboxusercontent.com/u/88888262/WigleWifi_20120828191657.csv" role="button"><i class="fa fa-file-excel-o"></i> Research</a></p>
+								<a class="btn btn-primary btn-lg btn-block" href="https://github.com/JamesFrost/robots.io" role="button"><i class="fa fa-github"></i> GitHub</a>
 							</div>		
 
 							<div class="col-lg-12 project-buttons">
-								<p><a class="btn btn-primary btn-lg btn-block" target="_blank" href="https://dl.dropboxusercontent.com/u/88888262/WigleWifi_20120823023613.kmlv" role="button"><i class="fa fa-map-marker"></i> Interactive Map</a></p>
-							</div>		
-
+								<a class="btn btn-primary btn-lg btn-block" href="http://robotsio.sourceforge.net/" role="button"><i class="fa fa-info-circle"></i> JavaDoc</a>
+							</div>	
 						</div>					
 					</div>
 
@@ -79,96 +78,115 @@
 			</div>
 
 			<div class="row">
-				<div class="col-sm-4 hidden-xs">
-					<img src="http://placehold.it/250x250" class="img-responsive img-rounded">
-				</div>
+				<div class="col-xs-12">
+				
+<h2>How to use</h2>
+<p>The <a href = "https://github.com/JamesFrost/robots.io/blob/master/src/me/jamesfrost/robotsio/RobotsParser.java">RobotsParser</a> class provides all the functionality to use robots.io.</p>
 
-				<div class="col-sm-8 col-xs-12">
-					<h2>Point</h2>
-					<p>Some shit</p>
-				</div>
-			</div>
+<h2>Examples</h2>
 
-			<div class="row project-features">
-				<div class="col-sm-4 hidden-xs">
-					<img src="http://placehold.it/250x250" class="img-responsive img-rounded">
-				</div>
+<h3>Connecting</h3>
+<p>To parse the robots.txt for Google with the User-Agent string "test":
+<pre>RobotsParser robotsParser = new RobotsParser("test");
+robotsParser.connect("http://google.com");</pre>
+Alternatively, to parse with no User-Agent, simply leave the constructor blank.</p>
+<br>
+<p>You can also pass a domain with a path.
+<pre>robotsParser.connect("http://google.com/example.htm"); //This would also be valid</pre>
+Note: Domains can either be passed in string form or as a <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URL.html">URL</a> object to all methods.</p>
 
-				<div class="col-sm-8 col-xs-12">
-					<h2>Point</h2>
-					<p>Some shit</p>
-				</div>
-			</div>
+<h3>Querying</h3>
+<p>To check if a URL is allowed:
+<pre>robotsParser.isAllowed("http://google.com/test"); //Returns true if allowed</pre>
 
-			<hr>					
+Or, to get all the rules parsed from the file:
+<pre>robotsParser.getDisallowedPaths(); //This will return an ArrayList of Strings</pre>
 
-			<div class="row text-center" id="project-links">	
+The results parsed are cached in the robotsParser object until the <code>connect()</code> method is called again, overwriting the previously parsed data</p>
 
-				<div class="col-xs-4 hidden-xs">
+<h2>Politeness</h2>
+<p>In the event that all access is denied, a <code>RobotsDisallowedException</code> will be thrown.</p>
+
+<h2>URL Normalisation</h2>
+<p>Domains passed to RobotsParser are normalised to always end in a forward slash.
+Disallowed Paths returned will never begin with a forward slash.
+This is so that URL's can easily be constructed. For example:
+<pre>robotsParser.getDomain() + robotsParser.getDisallowedPaths().get(0); // http://google.com/example.htm</pre>
+</p>
+
+<h2>Licensing</h2>
+<p>Robots.io is distributed under the GPL.</p>
+</div>
+
+</div>			
+
+<hr>					
+
+<div class="row text-center" id="project-links">	
+
+	<div class="col-xs-4 hidden-xs">
+					<a href="index.htm">
 					<span class="fa-stack fa-3x">
 						<i class="fa fa-circle fa-stack-2x project-link-icon-bg"></i>
-						<i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+						<i class="fa fa-arrow-left fa-stack-1x fa-inverse"></i>
 					</span>
-					<h3>Title</h3>
-					<hr>
-					<p>Some text</p>
+					<!-- <h3>Back</h3> -->
+				</a>
 				</div>
 
 				<div class="col-xs-4 hidden-xs">
+					<a href="https://sourceforge.net/projects/robotsio/files/latest/download">
 					<span class="fa-stack fa-3x">
 						<i class="fa fa-circle fa-stack-2x project-link-icon-bg"></i>
-						<i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+						<i class="fa fa-download fa-stack-1x fa-inverse"></i>
 					</span>
-					<h3>Title</h3>
-					<hr>
-					<p>Some text</p>
+				</a>
+					<!-- <h3>Twitter</h3> -->
 				</div>
 
 				<div class="col-xs-4 hidden-xs">
+					<a href="https://github.com/JamesFrost/robots.io">
 					<span class="fa-stack fa-3x">
 						<i class="fa fa-circle fa-stack-2x project-link-icon-bg"></i>
-						<i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+						<i class="fa fa-code fa-stack-1x fa-inverse"></i>
 					</span>		
-					<h3>Title</h3>
-					<hr>
-					<p>Some text</p>
+					<!-- <h3>Source</h3> -->
+				</a>
 				</div>
 
 
 				<div class="col-xs-6 visible-xs">
 					<span class="fa-stack fa-2x">
 						<i class="fa fa-circle fa-stack-2x project-link-icon-bg"></i>
-						<i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+						<i class="fa fa-arrow-left fa-stack-1x fa-inverse"></i>
 					</span>
-					<h3>Title</h3>
-					<hr>
-					<p>Some text</p>
+					<!-- <h3>Back</h3> -->
 				</div>
 
 				<div class="col-xs-6 visible-xs">
+					<a href="https://sourceforge.net/projects/robotsio/files/latest/download">
 					<span class="fa-stack fa-2x">
 						<i class="fa fa-circle fa-stack-2x project-link-icon-bg"></i>
-						<i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+						<i class="fa fa-download fa-stack-1x fa-inverse"></i>
 					</span>
-					<h3>Title</h3>
-					<hr>
-					<p>Some text</p>
+				</a>
+					<!-- <h3>Twitter</h3> -->
 				</div>
 
 				<div class="col-xs-3 visible-xs"></div>
 				<div class="col-xs-6 visible-xs">
+					<a href="https://github.com/JamesFrost/robots.io">
 					<span class="fa-stack fa-2x">
 						<i class="fa fa-circle fa-stack-2x project-link-icon-bg"></i>
-						<i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+						<i class="fa fa-code fa-stack-1x fa-inverse"></i>
 					</span>		
-					<h3>Title</h3>
-					<hr>
-					<p>Some text</p>
+				</a>
+					<!-- <h3>Source</h3> -->
 				</div>
 
-			</div>
-		</div>
-	</div>
+</div>
+</div>
+</div>
 </body>
 <footer>	
 	<hr>
