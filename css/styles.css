@@ -19,6 +19,10 @@ body h1, h2, h3, h4 {
 	font-weight: bold;
 }
 
+.simpledo-features {
+	padding-bottom: 15px;
+}
+
 #main i {
 	/*color: rgb(166, 141, 93);*/
 }
