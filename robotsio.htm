@@ -50,32 +50,26 @@
 			</div>
 		</div>
 	</div>
-
 	<div id="main">
 		<div id ="project-content" class="container">
 			<div class="jumbotron text-center" id="project-header">
-
 				<div class="row">					
 					<div class="col-lg-8 col-md-8 col-md-push-4 col-sm-6 col-sm-push-6 col-xs-12">
 						<h1>Robots.io</h1>			
 						<p class="text-muted hidden-xs">Java library designed to make parsing a websites 'robots.txt' file easy.</p>
 					</div>
-
 					<div class="col-xs-2 visible-xs"></div>
 					<div class="col-lg-4 col-lg-pull-8 col-md-4 col-md-pull-8 col-sm-6 col-sm-pull-6 col-xs-8">
 						<img src="img/projects/robotsio/org.png" class="img-responsive">
 					</div>
-
 					<div class="col-lg-12 col-sm-12 col-xs-12" style="padding-top: 15px;">
 						<div class="row">
 							<div class="col-lg-12 project-buttons">
 								<a class="btn btn-primary btn-lg btn-block" href="https://sourceforge.net/projects/robotsio/files/latest/download" role="button"><i class="fa fa-download"></i> Download</a>
 							</div>
-
 							<div class="col-lg-12 project-buttons">
 								<a class="btn btn-primary btn-lg btn-block" href="https://github.com/JamesFrost/robots.io" role="button"><i class="fa fa-github"></i> GitHub</a>
 							</div>		
-
 							<div class="col-lg-12 project-buttons">
 								<a class="btn btn-primary btn-lg btn-block" href="http://robotsio.sourceforge.net/" role="button"><i class="fa fa-info-circle"></i> JavaDoc</a>
 							</div>	
@@ -83,15 +77,11 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col-xs-12">
-				
 <h2>How to use</h2>
 <p>The <a href = "https://github.com/JamesFrost/robots.io/blob/master/src/me/jamesfrost/robotsio/RobotsParser.java">RobotsParser</a> class provides all the functionality to use robots.io.</p>
-
 <h2>Examples</h2>
-
 <h3>Connecting</h3>
 <p>To parse the robots.txt for Google with the User-Agent string "test":
 <pre>RobotsParser robotsParser = new RobotsParser("test");
@@ -101,19 +91,14 @@ Alternatively, to parse with no User-Agent, simply leave the constructor blank.<
 <p>You can also pass a domain with a path.
 <pre>robotsParser.connect("http://google.com/example.htm"); //This would also be valid</pre>
 Note: Domains can either be passed in string form or as a <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URL.html">URL</a> object to all methods.</p>
-
 <h3>Querying</h3>
 <p>To check if a URL is allowed:
 <pre>robotsParser.isAllowed("http://google.com/test"); //Returns true if allowed</pre>
-
 Or, to get all the rules parsed from the file:
 <pre><code>robotsParser.getDisallowedPaths(); //This will return an ArrayList of Strings</code></pre>
-
 The results parsed are cached in the robotsParser object until the <code>connect()</code> method is called again, overwriting the previously parsed data</p>
-
 <h2>Politeness</h2>
 <p>In the event that all access is denied, a <code>RobotsDisallowedException</code> will be thrown.</p>
-
 <h2>URL Normalisation</h2>
 <p>Domains passed to RobotsParser are normalised to always end in a forward slash.
 Disallowed Paths returned will never begin with a forward slash.
@@ -121,17 +106,12 @@ This is so that URL's can easily be constructed. For example:
 <pre>robotsParser.getDomain() + robotsParser.getDisallowedPaths().get(0);</pre>
 Would return <samp>http://google.com/example.htm</samp>.
 </p>
-
 <h2>Licensing</h2>
 <p>Robots.io is distributed under the <a href="https://github.com/JamesFrost/robots.io/blob/master/LICENSE">GPL v3</a>.</p>
 </div>
-
 </div>			
-
 <hr class="hidden-xs">					
-
 <div class="row text-center hidden-xs" id="project-links">	
-
 	<div class="col-xs-4">
 					<a href="index.htm">
 					<span class="fa-stack fa-3x">
@@ -140,7 +120,6 @@ Would return <samp>http://google.com/example.htm</samp>.
 					</span>
 				</a>
 			</div>
-
 			<div class="col-xs-4">
 				<a href="https://sourceforge.net/projects/robotsio/files/latest/download">
 					<span class="fa-stack fa-3x">
@@ -149,7 +128,6 @@ Would return <samp>http://google.com/example.htm</samp>.
 					</span>
 				</a>
 			</div>
-
 			<div class="col-xs-4">
 				<a href="https://github.com/JamesFrost/robots.io">
 					<span class="fa-stack fa-3x">
@@ -175,7 +153,6 @@ Would return <samp>http://google.com/example.htm</samp>.
 					</span>
 				</a>
 			</div>
-
 			<div class="visible-xs col-xs-2">
 				<a href="https://github.com/JamesFrost">
 					<span class="fa-stack fa-lg social-icon">
@@ -184,7 +161,6 @@ Would return <samp>http://google.com/example.htm</samp>.
 					</span>
 				</a>
 			</div>
-
 			<div class="visible-xs col-xs-2">
 				<a href="https://www.linkedin.com/in/jamesfrost2">
 					<span class="fa-stack fa-lg social-icon">
@@ -193,8 +169,6 @@ Would return <samp>http://google.com/example.htm</samp>.
 					</span>
 				</a>
 			</div>
-
-
 			<div class="col-sm-2 col-sm-offset-3 hidden-xs">
 				<a href="https://twitter.com/_JamesFrost">
 					<span class="fa-stack fa-2x social-icon">
@@ -203,7 +177,6 @@ Would return <samp>http://google.com/example.htm</samp>.
 					</span>
 				</a>
 			</div>
-
 			<div class="col-sm-2 hidden-xs">
 				<a href="https://github.com/JamesFrost">
 					<span class="fa-stack fa-2x social-icon">
@@ -212,7 +185,6 @@ Would return <samp>http://google.com/example.htm</samp>.
 					</span>
 				</a>
 			</div>
-
 			<div class="col-sm-2 hidden-xs">
 				<a href="https://www.linkedin.com/in/jamesfrost2">
 					<span class="fa-stack fa-2x social-icon">
@@ -221,16 +193,12 @@ Would return <samp>http://google.com/example.htm</samp>.
 					</span>
 				</a>
 			</div>
-
 		</div>
-
 		<div id="copyright">
 			&copy; 2014<script>new Date().getFullYear()>2014&&document.write("-"+new Date().getFullYear());</script>, James Frost.
 		</div>
-
 	</div>
 </footer>
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -241,5 +209,4 @@ Would return <samp>http://google.com/example.htm</samp>.
   ga('send', 'pageview');
 
 </script>
-
 </html>
