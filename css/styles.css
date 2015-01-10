@@ -19,6 +19,10 @@ body h1, h2, h3, h4 {
 	font-weight: bold;
 }
 
+.project-buttons a {
+	color: white !important;
+}
+
 .simpledo-features {
 	padding-bottom: 15px;
 }
@@ -77,13 +81,12 @@ span {
 	border-color: rgb(51, 51, 51);
 }
 
-.btn-primary:hover, .btn-primary:focus, .open .dropdown-toggle.btn-primary {
+.btn-primary:hover, .btn-primary:focus, .open .dropdown-toggle.btn-primary {	
 	background-color: rgb(132, 124, 106);
 	border-color: rgb(132, 124, 106);
 }
 
-.btn
-{
+.btn {
 	background-color: rgb(166, 141, 93);
 	border-color: rgb(166, 141, 93);
 }

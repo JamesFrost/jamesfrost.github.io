@@ -100,7 +100,7 @@ Note: Domains can either be passed in string form or as a <a href="http://docs.o
 <pre>robotsParser.isAllowed("http://google.com/test"); //Returns true if allowed</pre>
 
 Or, to get all the rules parsed from the file:
-<pre>robotsParser.getDisallowedPaths(); //This will return an ArrayList of Strings</pre>
+<pre><code>robotsParser.getDisallowedPaths(); //This will return an ArrayList of Strings</code></pre>
 
 The results parsed are cached in the robotsParser object until the <code>connect()</code> method is called again, overwriting the previously parsed data</p>
 
@@ -111,7 +111,8 @@ The results parsed are cached in the robotsParser object until the <code>connect
 <p>Domains passed to RobotsParser are normalised to always end in a forward slash.
 Disallowed Paths returned will never begin with a forward slash.
 This is so that URL's can easily be constructed. For example:
-<pre>robotsParser.getDomain() + robotsParser.getDisallowedPaths().get(0); // http://google.com/example.htm</pre>
+<pre>robotsParser.getDomain() + robotsParser.getDisallowedPaths().get(0);</pre>
+Would return <samp>http://google.com/example.htm</samp>.
 </p>
 
 <h2>Licensing</h2>
