@@ -58,8 +58,12 @@ hr {
 	width: 55%;
 }
 
-.project-link-icon-bg {
-	color: rgb(166, 141, 93);
+#project-links a {
+	color: rgb(166, 141, 93);	
+}
+
+#project-links a:hover {
+	color: rgb(132, 124, 106);	
 }
 
 span {
