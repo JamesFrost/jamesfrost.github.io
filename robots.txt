@@ -7,6 +7,9 @@ Disallow: CV.htm
 # Old URL
 Disallow: /simpleDo/
 
+# Template
+Disallow: basic-projects-template.htm
+
 Sitemap: 
 
 # Useragent string for robots.io testing
