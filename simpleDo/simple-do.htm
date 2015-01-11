@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SIMPLEDO - JAMES FROST</title>
+	<link rel="icon" type="image/png" href="/img/favicon.ico">
+	<meta charset="utf-8" />
+	<meta name = "description" content="James Frost is a Computer Science student from London interested in programming and design." />
+	<meta name = "keywords" content="James Frost, student, computer, science, personal, website" />
+	<meta name = "author" content = "James Frost" />
+	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	<!-- Import CSS -->
+	<link href = "css/bootstrap.min.css" rel = "stylesheet">
+	<link href = "css/styles.css" rel = "stylesheet">
+	<!-- Import Fonts -->
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<!-- Import JS -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/functions.js"></script>
+</head>
+<body>
+	<div class = "navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<a class = "navbar-brand" href="http://jamesfrost.me">
+				<span class="fa-stack fa-lg" id="main-logo">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+				</span>jamesfrost.me
+			</a>
+			<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+			</button>
+			<div class = "collapse navbar-collapse navHeaderCollapse">
+				<ul class = "nav navbar-nav  navbar-right">
+					<li class = "active"><a href="http://jamesfrost.me">PROJECTS</a></li>
+					<li><a href="about.htm">ABOUT</a> </li>
+					<li><a href="CV.htm">CV</a> </li>
+					<li><a href="mailto:hello@jamesfrost.me">CONTACT</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="main">
+		<div id ="project-content" class="container">
+			<div class="jumbotron text-center" id="project-header">
+				<div class="row">					
+					<div class="col-lg-8 col-md-8 col-md-push-4 col-sm-6 col-sm-push-6 col-xs-12">
+						<h1>SimpleDo</h1>			
+						<p class="text-muted hidden-xs">A simple, open source 'To-Do' application for Android, with an emphasis on minimalism. Available free, for Android 4.0.1 and up.</p>				
+					</div>
+					<div class="col-xs-2 visible-xs"></div>
+					<div class="col-lg-4 col-lg-pull-8 col-md-4 col-md-pull-8 col-sm-6 col-sm-pull-6 col-xs-8">
+						<img src="/img/projects/simpledo/simpleDoScreenShot.png" class="img-responsive">
+					</div>
+					<div class="col-lg-12 col-sm-12 col-xs-12" style="padding-top: 15px;">
+						<div class="row">
+							<div class="col-lg-12 project-buttons">
+								<a class="btn btn-primary btn-lg btn-block" href="http://play.google.com/store/apps/details?id=me.jamesfrost.simpledo" role="button"><i class="fa fa-android"></i> Google Play</a>
+							</div>
+							<div class="col-lg-12 project-buttons">
+								<a class="btn btn-primary btn-lg btn-block" href="http://github.com/JamesFrost/SimpleDo" role="button"><i class="fa fa-github"></i> GitHub</a>
+							</div>							
+						</div>					
+					</div>
+				</div>
+			</div>		
+			<div class="text-center">
+				<h2>Features</h2><br>
+				<div class="row">
+					<div class="col-md-4 col-sm-6">
+						<i class = "fa fa-clock-o fa-2x"></i>
+						<h3>Reminders</h3>
+						<p>Add Reminders so no task is forgotten.</p>
+					</div> 
+					<div class="col-md-4 col-sm-6">
+						<i class = "fa fa-calendar fa-2x"></i>
+						<h3>Due Dates</h3>
+						<p>Set Due Dates so no deadline is missed.</p>
+					</div> 
+					<div class="col-md-4 col-sm-6">
+						<i class = "fa fa-group fa-2x"></i>
+						<h3>Groups</h3>
+						<p>Seperate personal tasks from work.</p>
+					</div> 
+					<div class="col-md-4 col-sm-6">
+						<i class = "fa fa-exclamation fa-2x"></i>
+						<h3>Priority</h3>
+						<p>Set a tasks priority (Low, Medium or High).</p>
+					</div> 
+					<div class="col-md-4 col-sm-6">
+						<i class = "fa fa-sort fa-2x"></i>
+						<h3>Filters</h3>
+						<p>Filter tasks by several parameters.</p>
+					</div> 
+					<div class="col-md-4 col-sm-6">
+						<i class = "fa fa-mobile-phone fa-2x"></i>
+						<h3>Calendar Integration</h3>
+						<p>Adds tasks to your phones native calendar.</p>
+					</div>         
+				</div>
+				<hr>
+				<h2>Why SimpleDo?</h2><br>
+				<div class="row">
+					<div class="col-lg-4 col-md-4  col-sm-6 col-xs-12">
+						<i class = "fa fa-code-fork fa-4x"></i>
+						<h3>Open Source</h3>
+						<p>Released under the <a href="https://www.gnu.org/licenses/gpl.txt">GNU Public License</a>.</p>
+					</div> 
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<i class = "fa fa-gbp fa-4x"></i>
+						<h3>Free</h3>
+						<p>Simple Do is free, and always will be.</p>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						<i class = "fa fa-ban fa-4x"></i>
+						<h3>No Ads</h3>
+						<p>Ever.</p>
+					</div> 
+				</div> 
+			</div>
+			<hr class="hidden-xs">
+			<div class="row text-center hidden-xs" id="project-links">	
+				<div class="col-xs-4">
+					<a href="http://jamesfrost.me">
+						<span class="fa-stack fa-3x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-arrow-left fa-stack-1x fa-inverse"></i>
+						</span> 	
+					</a>
+				</div>
+				<div class="col-xs-4">
+					<a href="http://play.google.com/store/apps/details?id=me.jamesfrost.simpledo">
+						<span class="fa-stack fa-3x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-android fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+				</div>
+				<div class="col-xs-4">
+					<a href="http://github.com/JamesFrost/SimpleDo" target="_blank">
+						<span class="fa-stack fa-3x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-code fa-stack-1x fa-inverse"></i>
+						</span>		
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<footer>	
+	<hr>
+	<div class="text-center container" id="footer-social-icons">		
+		<div class="row">
+			<div class="col-xs-3 visible-xs"></div>
+			<div class="visible-xs col-xs-2">
+				<a href="https://twitter.com/_JamesFrost">
+					<span class="fa-stack fa-lg social-icon">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-twitter fa-stack-1x"></i>
+					</span>
+				</a>
+			</div>
+			<div class="visible-xs col-xs-2">
+				<a href="https://github.com/JamesFrost">
+					<span class="fa-stack fa-lg social-icon">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-github fa-stack-1x"></i>
+					</span>
+				</a>
+			</div>
+			<div class="visible-xs col-xs-2">
+				<a href="https://www.linkedin.com/in/jamesfrost2">
+					<span class="fa-stack fa-lg social-icon">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-linkedin fa-stack-1x"></i>
+					</span>
+				</a>
+			</div>
+			<div class="col-sm-2 col-sm-offset-3 hidden-xs">
+				<a href="https://twitter.com/_JamesFrost">
+					<span class="fa-stack fa-2x social-icon">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-twitter fa-stack-1x"></i>
+					</span>
+				</a>
+			</div>
+			<div class="col-sm-2 hidden-xs">
+				<a href="https://github.com/JamesFrost">
+					<span class="fa-stack fa-2x social-icon">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-github fa-stack-1x"></i>
+					</span>
+				</a>
+			</div>
+			<div class="col-sm-2 hidden-xs">
+				<a href="https://www.linkedin.com/in/jamesfrost2">
+					<span class="fa-stack fa-2x social-icon">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-linkedin fa-stack-1x"></i>
+					</span>
+				</a>
+			</div>
+		</div>
+		<div id="copyright">
+			&copy; 2014<script>new Date().getFullYear()>2014&&document.write("-"+new Date().getFullYear());</script>, James Frost.
+		</div>
+	</div>
+</footer>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-58426975-1', 'auto');
+ga('send', 'pageview');
+</script>
+</html>

@@ -1,0 +1,17 @@
+# robots.txt for jamesfrost.me
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: 404.htm
+Disallow: CV.htm
+
+# Old URL
+Disallow: /simpleDo/
+
+# Template
+Disallow: basic-projects-template.htm
+
+Sitemap: 
+
+# Useragent string for robots.io testing
+User-agent: shitbot
+Disallow: /
