@@ -10,8 +10,6 @@ Disallow: /simpleDo/
 # Template
 Disallow: basic-projects-template.htm
 
-Sitemap: 
-
 # Useragent string for robots.io testing
 User-agent: shitbot
 Disallow: /
