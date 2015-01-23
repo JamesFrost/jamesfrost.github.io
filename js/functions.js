@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$("#main").fadeIn("fast");	
 });
 
-$(document).on("click", "a", function () {
+$(document).on("click", "a [href!='_blank']", function () {
 
 	var newUrl = $(this).attr("href");
 

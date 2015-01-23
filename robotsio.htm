@@ -65,13 +65,13 @@
 					<div class="col-lg-12 col-sm-12 col-xs-12" style="padding-top: 15px;">
 						<div class="row">
 							<div class="col-lg-12 project-buttons">
-								<a itemprop="downloadUrl" class="btn btn-primary btn-lg btn-block" href="https://sourceforge.net/projects/robotsio/files/latest/download" role="button"><i class="fa fa-download"></i> Download</a>
+								<a itemprop="downloadUrl" class="btn btn-primary btn-lg btn-block" href="https://sourceforge.net/projects/robotsio/files/latest/download" role="button" target="_blank"><i class="fa fa-download"></i> Download</a>
 							</div>
 							<div class="col-lg-12 project-buttons">
-								<a class="btn btn-primary btn-lg btn-block" href="https://github.com/JamesFrost/robots.io" role="button"><i class="fa fa-github"></i> GitHub</a>
+								<a class="btn btn-primary btn-lg btn-block" target="_blank" href="https://github.com/JamesFrost/robots.io" role="button"><i class="fa fa-github"></i> GitHub</a>
 							</div>		
 							<div class="col-lg-12 project-buttons">
-								<a class="btn btn-primary btn-lg btn-block" href="http://robotsio.sourceforge.net/" role="button"><i class="fa fa-info-circle"></i> JavaDoc</a>
+								<a class="btn btn-primary btn-lg btn-block" target="_blank" href="http://robotsio.sourceforge.net/" role="button"><i class="fa fa-info-circle"></i> JavaDoc</a>
 							</div>	
 						</div>					
 					</div>
@@ -80,7 +80,7 @@
 			<div class="row">
 				<div class="col-xs-12">
 <h2>How to use</h2>
-<p>The <a href = "https://github.com/JamesFrost/robots.io/blob/master/src/me/jamesfrost/robotsio/RobotsParser.java">RobotsParser</a> class provides all the functionality to use robots.io.</p>
+<p>The <a href="https://github.com/JamesFrost/robots.io/blob/master/src/me/jamesfrost/robotsio/RobotsParser.java" target="_blank">RobotsParser</a> class provides all the functionality to use robots.io.</p>
 <h2>Examples</h2>
 <h3>Connecting</h3>
 <p>To parse the robots.txt for Google with the User-Agent string "test":
@@ -90,7 +90,7 @@ Alternatively, to parse with no User-Agent, simply leave the constructor blank.<
 <br>
 <p>You can also pass a domain with a path.
 <pre>robotsParser.connect("http://google.com/example.htm"); //This would also be valid</pre>
-Note: Domains can either be passed in string form or as a <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URL.html">URL</a> object to all methods.</p>
+Note: Domains can either be passed in string form or as a <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URL.html" target="_blank">URL</a> object to all methods.</p>
 <h3>Querying</h3>
 <p>To check if a URL is allowed:
 <pre>robotsParser.isAllowed("http://google.com/test"); //Returns true if allowed</pre>
@@ -107,7 +107,7 @@ This is so that URL's can easily be constructed. For example:
 Would return <samp>http://google.com/example.htm</samp>.
 </p>
 <h2>Licensing</h2>
-<p>Robots.io is distributed under the <a href="https://github.com/JamesFrost/robots.io/blob/master/LICENSE">GPL v3</a>.</p>
+<p>Robots.io is distributed under the <a href="https://github.com/JamesFrost/robots.io/blob/master/LICENSE" target="_blank">GPL v3</a>.</p>
 </div>
 </div>			
 <hr class="hidden-xs">					
@@ -121,7 +121,7 @@ Would return <samp>http://google.com/example.htm</samp>.
 				</a>
 			</div>
 			<div class="col-xs-4">
-				<a href="https://sourceforge.net/projects/robotsio/files/latest/download">
+				<a href="https://sourceforge.net/projects/robotsio/files/latest/download" target="_blank">
 					<span class="fa-stack fa-3x">
 						<i class="fa fa-circle fa-stack-2x"></i>
 						<i class="fa fa-download fa-stack-1x fa-inverse"></i>
@@ -129,7 +129,7 @@ Would return <samp>http://google.com/example.htm</samp>.
 				</a>
 			</div>
 			<div class="col-xs-4">
-				<a href="https://github.com/JamesFrost/robots.io">
+				<a href="https://github.com/JamesFrost/robots.io" target="_blank">
 					<span class="fa-stack fa-3x">
 						<i class="fa fa-circle fa-stack-2x"></i>
 						<i class="fa fa-code fa-stack-1x fa-inverse"></i>
@@ -152,7 +152,7 @@ Would return <samp>http://google.com/example.htm</samp>.
 		<div class="row">
 			<div class="col-xs-3 visible-xs"></div>
 			<div class="visible-xs col-xs-2">
-				<a href="https://twitter.com/_JamesFrost">
+				<a href="https://twitter.com/_JamesFrost" target="_blank">
 					<span class="fa-stack fa-lg social-icon">
 						<i class="fa fa-square-o fa-stack-2x"></i>
 						<i class="fa fa-twitter fa-stack-1x"></i>
@@ -160,7 +160,7 @@ Would return <samp>http://google.com/example.htm</samp>.
 				</a>
 			</div>
 			<div class="visible-xs col-xs-2">
-				<a href="https://github.com/JamesFrost">
+				<a href="https://github.com/JamesFrost" target="_blank">
 					<span class="fa-stack fa-lg social-icon">
 						<i class="fa fa-square-o fa-stack-2x"></i>
 						<i class="fa fa-github fa-stack-1x"></i>
@@ -168,7 +168,7 @@ Would return <samp>http://google.com/example.htm</samp>.
 				</a>
 			</div>
 			<div class="visible-xs col-xs-2">
-				<a href="https://www.linkedin.com/in/jamesfrost2">
+				<a href="https://www.linkedin.com/in/jamesfrost2" target="_blank">
 					<span class="fa-stack fa-lg social-icon">
 						<i class="fa fa-square-o fa-stack-2x"></i>
 						<i class="fa fa-linkedin fa-stack-1x"></i>
@@ -176,7 +176,7 @@ Would return <samp>http://google.com/example.htm</samp>.
 				</a>
 			</div>
 			<div class="col-sm-2 col-sm-offset-3 hidden-xs">
-				<a href="https://twitter.com/_JamesFrost">
+				<a href="https://twitter.com/_JamesFrost" target="_blank">
 					<span class="fa-stack fa-2x social-icon">
 						<i class="fa fa-square-o fa-stack-2x"></i>
 						<i class="fa fa-twitter fa-stack-1x"></i>
@@ -184,7 +184,7 @@ Would return <samp>http://google.com/example.htm</samp>.
 				</a>
 			</div>
 			<div class="col-sm-2 hidden-xs">
-				<a href="https://github.com/JamesFrost">
+				<a href="https://github.com/JamesFrost" target="_blank">
 					<span class="fa-stack fa-2x social-icon">
 						<i class="fa fa-square-o fa-stack-2x"></i>
 						<i class="fa fa-github fa-stack-1x"></i>
@@ -192,7 +192,7 @@ Would return <samp>http://google.com/example.htm</samp>.
 				</a>
 			</div>
 			<div class="col-sm-2 hidden-xs">
-				<a href="https://www.linkedin.com/in/jamesfrost2">
+				<a href="https://www.linkedin.com/in/jamesfrost2" target="_blank">
 					<span class="fa-stack fa-2x social-icon">
 						<i class="fa fa-square-o fa-stack-2x"></i>
 						<i class="fa fa-linkedin fa-stack-1x"></i>
