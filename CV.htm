@@ -15,6 +15,7 @@
 	<!-- Import Fonts -->
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href = "css/hover-min.css" rel="stylesheet" media="all">
 	<!-- Import JS -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -43,19 +44,21 @@
 				</ul>
 			</div>
 		</div>
-	</div>
+		<div id="slider"></div>		
+	</div>	
 	<div id="main">
 		<div id="cv-content" class="container">
 			<h2 class="page-header">CURRICULUM VITAE</h2>
 			<a href="pdf/JamesFrostCV.pdf" download="James Frost CV" target="_blank">Download PDF</a>
 			<h3>PROFILE</h3>
-			<p>Highly motivated student with excellent analytical skills and an aptitude for technical problems. Currently studying at City University London for a BSc with Honours in Computer Science. Looking for opportunities to further develop my technical skills and knowledge in a hi-tech environment.</p>
+			<p>Highly motivated student with excellent analytical skills and an aptitude for technical problems. Currently studying at City University London for a BSc with Honours in Computer Science. Looking for opportunities to further develop my technical skills and knowledge in a software development environment.</p>
 			<hr>
 			<h3>EMPLOYMENT</h3>	
 			<h4>Software Developer, Blurrt (December 2014 - Present)</h4>
 			<ul>
-				<li>Updated/maintained language analysis system.</li>
-				<li>Developed website.</li>
+				<li>Developed new Web App features.</li>
+				<li>Maintained RESTful API.</li>
+				<li>Updated the natural language processing system.</li>
 			</ul>	
 			<h4>Customer Advisor, Uniqlo (April 2014 - December 2014)</h4>
 			<ul>
@@ -68,16 +71,16 @@
 			<hr>
 			<h3>SKILLS PROFILE</h3>
 			<h4>Programming Skills</h4>
-			<ul><li><b>Java (Intermediate):</b> wide range of development experience, with a strong understanding of good code design.</li><li><b>Android Development (Intermediate):</b> can confidently develop applications for the Android platform, as shown through the ‘SimpleDo’ application.</li><li><b>C++ (Beginner):</b> currently undertaking the ‘Programming In C++’ module.</li></ul>
+			<ul><li><b>Java (Intermediate):</b> wide range of development experience, with a strong understanding of good code design.</li><li><b>Android Development (Intermediate):</b> can confidently develop applications for the Android platform, as shown through the ‘SimpleDo’ application.</li><li><b>C++ (Intermediate):</b> completed the ‘Programming In C++’ module with a First.</li></ul>
 			<h4>Web-Technologies</h4>
-			<ul><li><b>HTML/CSS (Intermediate)</b></li><li><b>Bootstrap Framework:</b> experienced in creating responsive, aesthetically pleasing websites that provide one user experience across all devices. </li><li><b>PHP/SQL (Intermediate):</b> strong understanding of real world applications, as demonstrated in the ‘E-Commerce Website’ project.</li></ul>
+			<ul><li><b>HTML/CSS (Intermediate)</b></li><li><b>JavaScript (Beginner)</b></li><li><b>Bootstrap Framework:</b> experienced in creating responsive, aesthetically pleasing websites that provide one user experience across all devices. </li><li><b>PHP/SQL (Intermediate):</b> real world experience of developing and maintaining an API/database that served data to customers.</li></ul>
 			<h4>Operating Systems</h4><ul><li><b>Linux</b></li><li><b>Windows</b></li></ul>	
 			<h4>Other</h4>
 			<ul>
-				<li><b>Proficient analytical skills:</b> proven ability to analyse problems or data, and to determine sound conclusions as shown through the ‘Is Wi-Fi Safe?’ dissertation. </li>
+				<li><b>Experienced with version control and collaborating with others using Git</b></li>
 				<li><b>Effective team working:</b> able to work efficiently and effectively with others and understand colleagues skills set.</li>
 				<li><b>Strong communication skills:</b> able to convey information and share ideas in a timely and professional manner.</li>
-				<li><b>Experience collaborating using Git</b></li>
+				<li><b>Proficient analytical skills:</b> proven ability to analyse problems or data, and to determine sound conclusions as shown through the ‘Is Wi-Fi Safe?’ dissertation. </li>
 			</ul>
 			<hr>
 			<h3>EDUCATION</h3>
@@ -87,19 +90,22 @@
 				<div class="row">
 					<div class="col-sm-6 col-xs-12">
 						<h4>Current Modules</h4>					
-						Professional Development in IT<br>
-						Data Structures and Algorithms<br>
-						Object-oriented Analysis and Design<br>
-						Programming In C++<br>
+						Networks and Operating Systems<br>
+						Language Processors<br>
+						Team Project<br>
 					</div>
 					<div class="col-sm-6 col-xs-12">
 						<h4>Completed Modules</h4>
+						Programming In C++ - 1st<br>
+						Programming in Java - 1st<br>
+						Data Structures and Algorithms - 1st<br>
+						Object-Oriented Analysis and Design - 1st<br>
+						Software Engineering - 1st<br>
+						Computation and Reasoning - 1st<br>
 						Systems Architecture - 1st<br>
 						Mathematics for Computing - 1st<br>
 						Business Systems - 1st<br>
-						Programming in Java - 1st<br>
-						Software Engineering - 1st<br>
-						Computation and Reasoning - 1st<br>
+						Professional Development in IT - 1st<br>
 					</div>
 				</div>
 			</div>
@@ -132,13 +138,6 @@
 			<ul>
 				<li>Comprehensive research based dissertation looking in to the data security and health implications of widespread Wi-Fi use.</li>	
 				<li>Complied database of 3720 Wi-Fi networks, recording MAC address, access point 	name, encryption used (if any), RSSI, latitude and longitude</li>
-			</ul>
-			<hr>
-			<h3>ACHIEVEMENTS</h3>
-			<ul>
-				<li>Awarded the Gold Chief Scout Award in 2008, the highest award in Scouting.</li>
-				<li>Awarded the Jack Petchy Award for being an 'Outstanding Achiever' from Scouts in 2008.</li>		
-				<li>Awarded a Lifesaving Bronze Medal, and I am a member of the Royal Lifesaving Society.</li>
 			</ul>
 			<hr>
 			<h3>OTHER</h3>
@@ -179,7 +178,7 @@
 				</a>
 			</div>
 			<div class="col-sm-2 col-sm-offset-3 hidden-xs">
-				<a href="https://twitter.com/_JamesFrost" target="_blank">
+				<a href="https://twitter.com/_JamesFrost" target="_blank" class="hvr-grow">
 					<span class="fa-stack fa-2x social-icon">
 						<i class="fa fa-square-o fa-stack-2x"></i>
 						<i class="fa fa-twitter fa-stack-1x"></i>
@@ -187,7 +186,7 @@
 				</a>
 			</div>
 			<div class="col-sm-2 hidden-xs">
-				<a href="https://github.com/JamesFrost" target="_blank">
+				<a href="https://github.com/JamesFrost" target="_blank" class="hvr-grow">
 					<span class="fa-stack fa-2x social-icon">
 						<i class="fa fa-square-o fa-stack-2x"></i>
 						<i class="fa fa-github fa-stack-1x"></i>
@@ -195,7 +194,7 @@
 				</a>
 			</div>
 			<div class="col-sm-2 hidden-xs">
-				<a href="https://www.linkedin.com/in/jamesfrost2" target="_blank">
+				<a href="https://www.linkedin.com/in/jamesfrost2" target="_blank" class="hvr-grow">
 					<span class="fa-stack fa-2x social-icon">
 						<i class="fa fa-square-o fa-stack-2x"></i>
 						<i class="fa fa-linkedin fa-stack-1x"></i>

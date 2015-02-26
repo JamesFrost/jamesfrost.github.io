@@ -19,6 +19,13 @@ body h1, h2, h3, h4 {
 	font-weight: bold;
 }
 
+#slider {
+	background-color:black; 
+	width:0px; 
+	height:2px; 
+	margin-top:5px;
+}
+
 .project-buttons a {
 	color: white !important;
 }
