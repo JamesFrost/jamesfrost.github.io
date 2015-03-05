@@ -1,66 +1,43 @@
 var commands;
 var byteCells;
 var dataPointer;
-var output;
 
 commands = new Array(8);
 commands.incrementDataPointer = function() {++dataPointer;}
 commands.decrementDataPointer = function() {--dataPointer;}
 commands.incrementByte = function() {++byteCells[dataPointer];}
 commands.decrementByte = function() {--byteCells[dataPointer];}
-commands.outputByte = function() {output += String.fromCharCode(byteCells[dataPointer]);}
+commands.outputByte = function(output) {output += String.fromCharCode(byteCells[dataPointer]); return output;}
 commands.acceptInput = function(input) {byteCells[dataPointer] = input.shift(); return input;}
 
-commands.jumpForward = function(code,instructionPointer) 
+commands.jumpForward = function(code,instructionPointer,bracketStack) 
 {
-	if(byteCells[dataPointer] == 0)
-	{
-		var bracketQueue = 1; 
-		while(bracketQueue != 0)
-		{
-			console.log('jumpForward');
-			++instructionPointer;
+	if(bracketStack.length == 0)
+		return instructionPointer;
 
-			if(code[instructionPointer] == ']') {
-				--bracketQueue;
-				continue;
-			}
-			if(code[instructionPointer] == '[') {
-				++bracketQueue;
-				continue;
-			}
-		}
-	}
-	// instructionPointer++;
-	return instructionPointer;
+	++instructionPointer;
+
+	if(code[instructionPointer] == ']')
+		bracketStack.pop();
+	else if(code[instructionPointer] == '[')
+		bracketStack.push(instructionPointer);
+
+	return commands.jumpForward(code, instructionPointer, bracketStack);
 }
 
-commands.jumpBackward = function(code,instructionPointer)
+commands.jumpBackward = function(code,instructionPointer, bracketStack)
 {
-	if(byteCells[dataPointer] != 0)
-	{
-		var bracketQueue = 1;
-		while(bracketQueue != 0)
-		{
-			console.log('jumping backward');
-			// console.log('bracketQueue: ' + bracketQueue);
-			--instructionPointer;
+	if(bracketStack.length == 0)
+		return instructionPointer;
 
-			if(code[instructionPointer] == '[') 
-			{
-				--bracketQueue;
-				continue;
-			}
-			if(code[instructionPointer] == ']') 
-			{
-				++bracketQueue;
-				continue;
-			}
-		}
-	}
-	// instructionPointer++;
-	// console.log('returning jumpBackward');
-	return instructionPointer;
+	--instructionPointer;
+
+	if(code[instructionPointer] == ']')
+		bracketStack.push(instructionPointer);
+	else if(code[instructionPointer] == '[')
+		bracketStack.pop();
+
+	return commands.jumpBackward(code, instructionPointer, bracketStack);
 }
 
 function getNewByteCells()
@@ -71,6 +48,55 @@ function getNewByteCells()
 		byteCells[i] = 0;
 	}
 	return byteCells;
+}
+
+function processLine(code,input,instructionPointer,output)
+{
+	if(instructionPointer >= 511)
+		return output;
+
+	if(code[instructionPointer] == '>')
+	{
+		commands.incrementDataPointer();
+	}
+	else if(code[instructionPointer] == '<')
+	{
+		commands.decrementDataPointer();
+	}
+	else if(code[instructionPointer] == '+')
+	{
+		commands.incrementByte();
+	}
+	else if(code[instructionPointer] == '-')
+	{
+		commands.decrementByte();
+	}
+	else if(code[instructionPointer] == '.')
+	{
+		output = commands.outputByte(output);
+	}
+	else if(code[instructionPointer] == ',')
+	{
+		input = commands.acceptInput(input);
+	}
+	else if(code[instructionPointer] == '[' && byteCells[dataPointer] == 0)
+	{
+		var bracketStack = [];
+		bracketStack.push(instructionPointer);		
+		instructionPointer = commands.jumpForward(code,instructionPointer, bracketStack);
+	}
+	else if(code[instructionPointer] == ']' && byteCells[dataPointer] != 0)
+	{
+		var bracketStack = [];
+		bracketStack.push(instructionPointer);		
+		instructionPointer = commands.jumpBackward(code,instructionPointer, bracketStack);
+	}
+	// else 
+	// 	return 'Invalid input: ' + code[instructionPointer];
+
+	++instructionPointer;
+
+	return processLine(code, input, instructionPointer, output);
 }
 
 /*
@@ -90,89 +116,5 @@ function interpret(brainfuck,input)
 	output = "";
 
 	var code = brainfuck.trim().replace(/ /g, "").replace(/(\r\n|\n|\r)/gm,"").split("");
-
-	for(var instructionPointer = 0; instructionPointer < code.length; ++instructionPointer)
-	{
-		if(code[instructionPointer] == '>')
-		{
-			commands.incrementDataPointer();
-			continue;
-		}
-		if(code[instructionPointer] == '<')
-		{
-			commands.decrementDataPointer();
-			continue;
-		}
-		if(code[instructionPointer] == '+')
-		{
-			commands.incrementByte();
-			continue;
-		}
-		if(code[instructionPointer] == '-')
-		{
-			commands.decrementByte();
-			continue;
-		}
-		if(code[instructionPointer] == '.')
-		{
-			commands.outputByte();
-			continue;
-		}
-		if(code[instructionPointer] == ',')
-		{
-			input = commands.acceptInput(input);
-			continue;
-		}
-		if(code[instructionPointer] == '[')
-		{
-			// instructionPointer = commands.jumpForward(code,instructionPointer);
-			if(byteCells[dataPointer] == 0)
-			{
-				var bracketQueue = 1; 
-				while(bracketQueue != 0)
-				{
-					console.log('jumpForward');
-					++instructionPointer;
-
-					if(code[instructionPointer] == ']') {
-						--bracketQueue;
-						continue;
-					}
-					if(code[instructionPointer] == '[') {
-						++bracketQueue;
-						continue;
-					}
-				}
-			}
-			continue;
-		}
-		if(code[instructionPointer] == ']')
-		{
-			// instructionPointer = commands.jumpBackward(code,instructionPointer);
-			if(byteCells[dataPointer] != 0)
-			{
-				var bracketQueue = 1;
-				while(bracketQueue != 0)
-				{
-					console.log('jumping backward');
-			// console.log('bracketQueue: ' + bracketQueue);
-			--instructionPointer;
-
-			if(code[instructionPointer] == '[') 
-			{
-				--bracketQueue;
-				continue;
-			}
-			if(code[instructionPointer] == ']') 
-			{
-				++bracketQueue;
-				continue;
-			}
-		}
-	}
-	continue;
-}
-return 'Invalid input: ' + code[instructionPointer];
-}
-return output;
+	return processLine(code, input, 0, output);
 }
