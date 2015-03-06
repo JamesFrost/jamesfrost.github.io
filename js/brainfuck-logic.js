@@ -16,6 +16,7 @@ $(document).ready(function()
 		terminal.clear();
 		var start = performance.now();
 		var output = interpret($('#txt-area').val(), $('#input').val());
+		// var output = parse.interpret($('#txt-area').val(), $('#input').val());
 		var end = performance.now();
 		terminal.print(output);
 		terminal.print('Time elapsed: ' + (end - start) + 'ms');		

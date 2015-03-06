@@ -5,39 +5,46 @@ var dataPointer;
 commands = new Array(8);
 commands.incrementDataPointer = function() {++dataPointer;}
 commands.decrementDataPointer = function() {--dataPointer;}
-commands.incrementByte = function() {++byteCells[dataPointer];}
-commands.decrementByte = function() {--byteCells[dataPointer];}
+commands.incrementByte = function() {++byteCells[dataPointer]; byteCells[dataPointer] = validateByte(byteCells[dataPointer]);}
+commands.decrementByte = function() {--byteCells[dataPointer]; byteCells[dataPointer] = validateByte(byteCells[dataPointer]);}
 commands.outputByte = function(output) {output += String.fromCharCode(byteCells[dataPointer]); return output;}
 commands.acceptInput = function(input) {byteCells[dataPointer] = input.shift(); return input;}
 
 commands.jumpForward = function(code,instructionPointer,bracketStack) 
 {
-	if(bracketStack.length == 0)
-		return instructionPointer;
+	while(bracketStack.length != 0)
+	{
+		++instructionPointer;
 
-	++instructionPointer;
-
-	if(code[instructionPointer] == ']')
-		bracketStack.pop();
-	else if(code[instructionPointer] == '[')
-		bracketStack.push(instructionPointer);
-
-	return commands.jumpForward(code, instructionPointer, bracketStack);
+		if(code[instructionPointer] == ']')
+			bracketStack.pop();
+		else if(code[instructionPointer] == '[')
+			bracketStack.push(instructionPointer);
+	}
+	return instructionPointer;
 }
 
 commands.jumpBackward = function(code,instructionPointer, bracketStack)
 {
-	if(bracketStack.length == 0)
-		return instructionPointer;
+	while(bracketStack.length != 0)
+	{
+		--instructionPointer;
 
-	--instructionPointer;
+		if(code[instructionPointer] == ']')
+			bracketStack.push(instructionPointer);
+		else if(code[instructionPointer] == '[')
+			bracketStack.pop();
+	}
+	return instructionPointer;
+}
 
-	if(code[instructionPointer] == ']')
-		bracketStack.push(instructionPointer);
-	else if(code[instructionPointer] == '[')
-		bracketStack.pop();
-
-	return commands.jumpBackward(code, instructionPointer, bracketStack);
+function validateByte(byteValue)
+{
+	if(byteValue > 255)
+		return 0;
+	if(byteValue < 0)
+		return 255;
+	return byteValue;
 }
 
 function getNewByteCells()
@@ -50,64 +57,57 @@ function getNewByteCells()
 	return byteCells;
 }
 
-function processLine(code,input,instructionPointer,output)
-{
-	if(instructionPointer >= 511)
-		return output;
+function step(code,input,output)
+{		
+	var instructionPointer = 0;
+	var loop = 0 ;
+	do
+	{
+		if(code[instructionPointer] == '>')
+		{
+			commands.incrementDataPointer();
+		}
+		else if(code[instructionPointer] == '<')
+		{
+			commands.decrementDataPointer();
+		}
+		else if(code[instructionPointer] == '+')
+		{
+			commands.incrementByte();
+		}
+		else if(code[instructionPointer] == '-')
+		{
+			commands.decrementByte();
+		}
+		else if(code[instructionPointer] == '.')
+		{
+			output = commands.outputByte(output);
+		}
+		else if(code[instructionPointer] == ',')
+		{
+			input = commands.acceptInput(input);
+		}
+		else if(code[instructionPointer] == '[')
+		{	
+			if(byteCells[dataPointer] == 0)
+				instructionPointer = commands.jumpForward(code,instructionPointer, [instructionPointer]);
+		}
+		else if(code[instructionPointer] == ']')
+		{
+			if(byteCells[dataPointer] != 0)
+				instructionPointer = commands.jumpBackward(code,instructionPointer, [instructionPointer]);
+		}
+		else 
+			return 'Invalid input: ' + code[instructionPointer];
 
-	if(code[instructionPointer] == '>')
-	{
-		commands.incrementDataPointer();
-	}
-	else if(code[instructionPointer] == '<')
-	{
-		commands.decrementDataPointer();
-	}
-	else if(code[instructionPointer] == '+')
-	{
-		commands.incrementByte();
-	}
-	else if(code[instructionPointer] == '-')
-	{
-		commands.decrementByte();
-	}
-	else if(code[instructionPointer] == '.')
-	{
-		output = commands.outputByte(output);
-	}
-	else if(code[instructionPointer] == ',')
-	{
-		input = commands.acceptInput(input);
-	}
-	else if(code[instructionPointer] == '[' && byteCells[dataPointer] == 0)
-	{
-		var bracketStack = [];
-		bracketStack.push(instructionPointer);		
-		instructionPointer = commands.jumpForward(code,instructionPointer, bracketStack);
-	}
-	else if(code[instructionPointer] == ']' && byteCells[dataPointer] != 0)
-	{
-		var bracketStack = [];
-		bracketStack.push(instructionPointer);		
-		instructionPointer = commands.jumpBackward(code,instructionPointer, bracketStack);
-	}
-	// else 
-	// 	return 'Invalid input: ' + code[instructionPointer];
+		if(++loop > 900000000)
+		{
+			return output;
+		}
 
-	++instructionPointer;
-
-	return processLine(code, input, instructionPointer, output);
+	} while(++instructionPointer < code.length);
+	return output;
 }
-
-/*
->	increment the data pointer (to point to the next cell to the right).
-<	decrement the data pointer (to point to the next cell to the left).
-+	increment (increase by one) the byte at the data pointer.
--	decrement (decrease by one) the byte at the data pointer.
-.	output the byte at the data pointer.
-,	accept one byte of input, storing its value in the byte at the data pointer.
-[	if the byte at the data pointer is zero, then instead of moving the instruction pointer forward to the next command, jump it forward to the command after the matching ] command.
-]	if the byte at the data pointer is nonzero, then instead of moving the instruction pointer forward to the next command, jump it back to the command after the matching [ command.*/
 
 function interpret(brainfuck,input)
 {
@@ -116,5 +116,5 @@ function interpret(brainfuck,input)
 	output = "";
 
 	var code = brainfuck.trim().replace(/ /g, "").replace(/(\r\n|\n|\r)/gm,"").split("");
-	return processLine(code, input, 0, output);
+	return step(code, input, output);
 }
