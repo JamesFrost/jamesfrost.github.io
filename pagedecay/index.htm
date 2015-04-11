@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JAMES FROST</title>
-	<link rel="icon" type="image/png" href="img/favicon.ico">
+	<title>PAGE DECAY - JAMES FROST</title>
+	<link rel="icon" type="image/png" href="/img/favicon.ico">
 	<meta charset="utf-8" />
 	<meta name = "description" content="James Frost is a Computer Science student from London interested in programming and design." />
 	<meta name = "keywords" content="James Frost, student, computer, science, personal, website" />
 	<meta name = "author" content = "James Frost" />
 	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 	<!-- Import CSS -->
-	<link href = "css/bootstrap.min.css" rel = "stylesheet">
-	<link href = "css/styles.css" rel = "stylesheet">
-	<link href = "css/hover-min.css" rel="stylesheet" media="all">
+	<link href = "/css/bootstrap.min.css" rel = "stylesheet">
+	<link href = "/css/styles.css" rel = "stylesheet">
+	<link href = "/css/hover-min.css" rel="stylesheet" media="all">
 	<!-- Import Fonts -->
-	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<!-- Import JS -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/functions.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/functions.js"></script>
 </head>
 <body>
 	<div class = "navbar navbar-default navbar-fixed-top">
@@ -43,38 +43,51 @@
 				</ul>
 			</div>
 		</div>
-	</div>	
-	<div id="main" class="container">
-		<div class="row panel-body" id="projects-grid">		
-			<div class="col-lg-4 col-sm-6 col-xs-12">
-				<a href="/simpleDo" class="hvr-float-shadow">
-					<img src="img/projects/simpledo/simpleDo.png" class="thumbnail center-block img-responsive">	
-				</a>
+	</div>
+	<div id="main">
+		<div id ="project-content" class="container">
+			<div class="jumbotron text-center" id="project-header">
+				<div class="row">					
+					<div class="col-xs-12">
+						<h1>Page Decay</h1>			
+						<p class="text-muted hidden-xs">Every time the page is loaded, the image is distorted, decaying over time.</p>	
+					</div>
+					<div class="col-xs-12">
+						<iframe src="//player.vimeo.com/video/92412122?byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><p><small>The page is loaded 5 times a second, 30 times in total. </small></p>
+					</div>
+				</div>
 			</div>
-			<div class="col-lg-4 col-sm-6 col-xs-12">
-				<a href="/sentibotr" class="hvr-float-shadow">
-					<img src="img/projects/sentiBotr/logo.png" class="thumbnail center-block img-responsive">
-				</a>
-			</div> 	
-			<div class="col-lg-4 col-sm-6 col-xs-12">
-				<a href="/robotsio" class="hvr-float-shadow">
-					<img src="img/projects/robotsio/logo.png" class="thumbnail img-responsive">
-				</a>
-			</div>
-			<div class="col-lg-4 col-sm-6 col-xs-12">
-				<a href="/iswifisafe" class="hvr-float-shadow">
-					<img src="img/projects/iswifisafe/logo.png" class="thumbnail img-responsive">
-				</a>
-			</div>
-			<div class="col-lg-4 col-sm-6 col-xs-12">
-				<a href="https://github.com/JamesFrost/paddleball" target="_blank" class="hvr-float-shadow">
-					<img src="img/projects/paddleball/logo.png" class="thumbnail img-responsive">
-				</a>
+			<div class="row">
+				<div class="col-sxs-12 hidden-xs">
+					<script src="https://gist.github.com/JamesFrost/10779668.js"></script>
+				</div>
 			</div>			
-			<div class="col-lg-4 col-sm-6 col-xs-12">
-				<a href="/pagedecay" class="hvr-float-shadow">
-					<img src="img/projects/pageDecay/logo.png" class="thumbnail img-responsive">
-				</a>
+			<hr class="hidden-xs">					
+			<div class="row text-center hidden-xs" id="project-links">	
+				<div class="col-xs-4">
+					<a href="http://jamesfrost.me">
+						<span class="fa-stack fa-3x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-arrow-left fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+				</div>
+				<div class="col-xs-4">
+					<a href="https://gist.github.com/JamesFrost/10779668/download" target="_blank">
+						<span class="fa-stack fa-3x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-download fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+				</div>
+				<div class="col-xs-4">
+					<a href="https://gist.github.com/JamesFrost/10779668#file-page-decay-php" target="_blank">
+						<span class="fa-stack fa-3x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-code fa-stack-1x fa-inverse"></i>
+						</span>		
+					</a>
+				</div>	
 			</div>
 		</div>
 	</div>
@@ -108,8 +121,8 @@
 					</span>
 				</a>
 			</div>
-			<div class="col-sm-2 col-sm-offset-3 hidden-xs">
-				<a href="https://twitter.com/_JamesFrost" target="_blank" class="hvr-grow">
+			<div class="col-sm-2 col-sm-offset-3 hidden-xs hvr-grow" target="_blank">
+				<a href="https://twitter.com/_JamesFrost">
 					<span class="fa-stack fa-2x social-icon">
 						<i class="fa fa-square-o fa-stack-2x"></i>
 						<i class="fa fa-twitter fa-stack-1x"></i>
@@ -146,5 +159,6 @@
 
 ga('create', 'UA-58426975-1', 'auto');
 ga('send', 'pageview');
+
 </script>
 </html>

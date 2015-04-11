@@ -1,7 +1,5 @@
 $(document).ready(function(){ 
-	$("#loading").hide();
-	$("#main").fadeIn("fast");	
-
+	$("#main").fadeIn("fast");
 });
 
 $(document).on("click", "a [target!='_blank']", function () {

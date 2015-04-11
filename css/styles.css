@@ -131,6 +131,8 @@ footer hr {
 img {
 	display: inline;	
 	float: left;
+    /*opacity: 0; */
+    /*transition: opacity .3s ease-in;*/
 }
 
 #about-content {
