@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BRAINFUCK - JAMES FROST</title>
-	<link rel="icon" type="image/png" href="/img/favicon.ico">
+	<title>BRAINF*CK - JAMES FROST</title>
+	<link rel="icon" type="image/png" href="../img/favicon.ico">
 	<meta charset="utf-8" />
-	<meta name = "description" content="James Frost is a Computer Science student from London interested in programming and design." />
-	<meta name = "keywords" content="James Frost, student, computer, science, personal, website" />
+	<meta name = "description" content="An online interpreter for the Brainf*ck programming language." />
+	<meta name = "keywords" content="Brainfuck, language, programming, code, interpreter, javascript" />
 	<meta name = "author" content = "James Frost" />
 	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@_JamesFrost" />
+	<meta name="twitter:title" content="Brainf*ck Interpreter" />
+	<meta name="twitter:description" content="An online interpreter for the Brainf*ck programming language." />
+	<meta name="twitter:image" content="http://jamesfrost.me/img/projects/brainf_ck/logo.png" />
+	<meta name="twitter:url" content="http://jamesfrost.me/brainfuck"/>
 	<!-- Import CSS -->
-	<link href = "/css/bootstrap.min.css" rel = "stylesheet">
-	<link href = "/css/styles.css" rel = "stylesheet">
+	<link href = "../css/bootstrap.min.css" rel = "stylesheet">
+	<link href = "../css/styles.css" rel = "stylesheet">
 	<!-- Import Fonts -->
-	<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -31,7 +38,7 @@
 			</button>
 			<div class = "collapse navbar-collapse navHeaderCollapse">
 				<ul class = "nav navbar-nav  navbar-right">
-					<li class = "active"><a href="index.htm">PROJECTS</a></li>
+					<li class = "active"><a href="http://jamesfrost.me">PROJECTS</a></li>
 					<li><a href="/about">ABOUT</a> </li>
 					<li><a href="/CV">CV</a> </li>
 					<li><a href="mailto:hello@jamesfrost.me">CONTACT</a></li>
@@ -43,13 +50,13 @@
 	<div id="main">
 		<div id ="project-content" class="container">
 			<div class="jumbotron" id="project-header">
-				<h1 class="text-center">Brainfuck Interpreter</h1>
-				<small><b><u>programs:</u></b> <a href="javascript:void(0)" id="hello-world">hello world</a> - <a href="javascript:void(0)"id="fib-numbers">fibonacci numbers</a></small>
+				<h1 class="text-center">Brainf*ck Interpreter</h1>
+				<small><b><u>programs:</u></b> <a href="javascript:void(0)" id="hello-world">hello world</a> - <a href="javascript:void(0)"id="fib-numbers">fibonacci numbers</a> - <a href="javascript:void(0)"id="bottles">bottles of beer</a></small>
 				<div class="form-group">
 					<textarea id="txt-area" class="form-control" rows="6" placeholder="Code"></textarea>
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" id="input" placeholder="Input" data-toggle="tooltip" data-placement="top" title="Separate Inputs with Spaces">
+					<input type="text" class="form-control" id="input" placeholder="Input">
 				</div>
 				<div class="form-group">
 					<button id="btn-go" class="btn btn-default form-control">Go</button>
@@ -57,103 +64,70 @@
 				<div id="terminal"></div>
 			</div>	
 
-			<h2>What is Brainfuck?</h2>
-			<p><i>'Brainfuck is an esoteric programming language noted for its extreme minimalism. The language consists of only eight simple commands and an instruction pointer. It is designed to challenge and amuse programmers.'</i></p>
+			<h2>What is Brainf*ck?</h2>
+			<p><i>'Brainf*ck is an esoteric programming language noted for its extreme minimalism. The language consists of only eight simple commands and an instruction pointer. It is designed to challenge and amuse programmers.'</i></p>
 
-			<h1>Some title</h1>
+			<h2>Syntax</h2>
 			<div class="row">
-				<div class="col-xs-1">
-					>
-				</div>
-				<div class="col-xs-11">
-					increment the data pointer (to point to the next cell to the right).
+				<div class="col-xs-12">
+					<code>></code> - Increment the data pointer (to point to the next cell to the right).
 				</div>
 
-				<div class="col-xs-1">
-					<
-				</div>
-				<div class="col-xs-11">
-					decrement the data pointer (to point to the next cell to the left).
+				<div class="col-xs-12 top-buffer">
+					<code><</code> - Decrement the data pointer (to point to the next cell to the left).
 				</div>
 
-				<div class="col-xs-1">
-					+
-				</div>
-				<div class="col-xs-11">
-					increment (increase by one) the byte at the data pointer.
+				<div class="col-xs-12 top-buffer">
+					<code>+</code> - Increment (increase by one) the byte at the data pointer.
 				</div>
 
+				<div class="col-xs-12 top-buffer">
+					<code>-</code> - Decrement (decrease by one) the byte at the data pointer.
+				</div>
+
+				<div class="col-xs-12 top-buffer">
+					<code>.</code> - Output the byte at the data pointer.
+				</div>
+
+				<div class="col-xs-12 top-buffer">
+					<code>,</code>	- Accept one byte of input, storing its value in the byte at the data pointer.
+				</div>
+
+				<div class="col-xs-12 top-buffer">
+					<code>[</code> - If the byte at the data pointer is zero, then instead of moving the instruction pointer forward to the next command, jump it forward to the command after the matching ] command.
+				</div>
+
+				<div class="col-xs-12 top-buffer">
+					<code>]</code> - If the byte at the data pointer is nonzero, then instead of moving the instruction pointer forward to the next command, jump it back to the command after the matching [ command.			
+				</div>
 			</div>
-			-	decrement (decrease by one) the byte at the data pointer.
-			.	output the byte at the data pointer.
-			,	accept one byte of input, storing its value in the byte at the data pointer.
-			[	if the byte at the data pointer is zero, then instead of moving the instruction pointer forward to the next command, jump it forward to the command after the matching ] command.
-			]	if the byte at the data pointer is nonzero, then instead of moving the instruction pointer forward to the next command, jump it back to the command after the matching [ command.			
 
-			<div class="row text-center" id="project-links">	
-
-				<div class="col-xs-4 hidden-xs">
-					<span class="fa-stack fa-3x">
-						<i class="fa fa-circle fa-stack-2x project-link-icon-bg"></i>
-						<i class="fa fa-flag fa-stack-1x fa-inverse"></i>
-					</span>
-					<h3>Title</h3>
-					<hr>
-					<p>Some text</p>
+			<hr class="hidden-xs">					
+			<div class="row text-center hidden-xs" id="project-links">	
+				<div class="col-xs-4">
+					<a href="http://jamesfrost.me">
+						<span class="fa-stack fa-3x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-arrow-left fa-stack-1x fa-inverse"></i>
+						</span> 	
+					</a>
 				</div>
-
-				<div class="col-xs-4 hidden-xs">
-					<span class="fa-stack fa-3x">
-						<i class="fa fa-circle fa-stack-2x project-link-icon-bg"></i>
-						<i class="fa fa-flag fa-stack-1x fa-inverse"></i>
-					</span>
-					<h3>Title</h3>
-					<hr>
-					<p>Some text</p>
+				<div class="col-xs-4">
+					<a href="https://github.com/JamesFrost/brainfuck.js/archive/master.zip" target="_blank">
+						<span class="fa-stack fa-3x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-download fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
 				</div>
-
-				<div class="col-xs-4 hidden-xs">
-					<span class="fa-stack fa-3x">
-						<i class="fa fa-circle fa-stack-2x project-link-icon-bg"></i>
-						<i class="fa fa-flag fa-stack-1x fa-inverse"></i>
-					</span>		
-					<h3>Title</h3>
-					<hr>
-					<p>Some text</p>
+				<div class="col-xs-4">
+					<a href="https://github.com/JamesFrost/brainfuck.js" target="_blank">
+						<span class="fa-stack fa-3x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-code fa-stack-1x fa-inverse"></i>
+						</span>		
+					</a>
 				</div>
-
-
-				<div class="col-xs-6 visible-xs">
-					<span class="fa-stack fa-2x">
-						<i class="fa fa-circle fa-stack-2x project-link-icon-bg"></i>
-						<i class="fa fa-flag fa-stack-1x fa-inverse"></i>
-					</span>
-					<h3>Title</h3>
-					<hr>
-					<p>Some text</p>
-				</div>
-
-				<div class="col-xs-6 visible-xs">
-					<span class="fa-stack fa-2x">
-						<i class="fa fa-circle fa-stack-2x project-link-icon-bg"></i>
-						<i class="fa fa-flag fa-stack-1x fa-inverse"></i>
-					</span>
-					<h3>Title</h3>
-					<hr>
-					<p>Some text</p>
-				</div>
-
-				<div class="col-xs-3 visible-xs"></div>
-				<div class="col-xs-6 visible-xs">
-					<span class="fa-stack fa-2x">
-						<i class="fa fa-circle fa-stack-2x project-link-icon-bg"></i>
-						<i class="fa fa-flag fa-stack-1x fa-inverse"></i>
-					</span>		
-					<h3>Title</h3>
-					<hr>
-					<p>Some text</p>
-				</div>
-
 			</div>
 		</div>
 	</div>
@@ -228,11 +202,11 @@
 </footer>
 <!-- Import JS -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/functions.js"></script>
-<script src="/js/brainfuck.js"></script>
-<script src="/js/brainfuck-logic.js"></script>
-<script src="/js/terminal.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/functions.js"></script>
+<script src="../js/brainfuck.js"></script>
+<script src="../js/brainfuck-logic.js"></script>
+<script src="../js/terminal.js"></script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -241,7 +215,5 @@
 
 ga('create', 'UA-58426975-1', 'auto');
 ga('send', 'pageview');
-
 </script>
-
 </html>

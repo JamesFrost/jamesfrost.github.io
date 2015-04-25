@@ -1,120 +1,106 @@
-var commands;
-var byteCells;
-var dataPointer;
+/*
+An interpreter for the Brainfuck language.
 
-commands = new Array(8);
-commands.incrementDataPointer = function() {++dataPointer;}
-commands.decrementDataPointer = function() {--dataPointer;}
-commands.incrementByte = function() {++byteCells[dataPointer]; byteCells[dataPointer] = validateByte(byteCells[dataPointer]);}
-commands.decrementByte = function() {--byteCells[dataPointer]; byteCells[dataPointer] = validateByte(byteCells[dataPointer]);}
-commands.outputByte = function(output) {output += String.fromCharCode(byteCells[dataPointer]); return output;}
-commands.acceptInput = function(input) {byteCells[dataPointer] = input.shift(); return input;}
+Each character in the code is converted to its ASCII value, 
+and the corresponding function called. For example: '>' has an
+ASCII value of 62, and as such will call the '_62' method.
+*/
 
-commands.jumpForward = function(code,instructionPointer,bracketStack) 
+var BrainfuckParser = function() 
 {
+	this.byteCells = new Array(30000);
+};
+
+BrainfuckParser.prototype.reset = function() 
+{
+	this.code = "";
+	this.dataPointer = 0;
+	this.instructionPointer = 0;
+	this.output = "";
+	this.input = "";
+
+	for(var i = 0; i < this.byteCells.length; ++i)
+		this.byteCells[i] = 0;
+};
+
+BrainfuckParser.prototype._62 = function() { ++this.dataPointer; };
+BrainfuckParser.prototype._60 = function() { --this.dataPointer; };
+BrainfuckParser.prototype._43 = function() { ++this.byteCells[this.dataPointer]; this.byteCells[this.dataPointer] = this.validateByte(this.byteCells[this.dataPointer]); };
+BrainfuckParser.prototype._45 = function() { --this.byteCells[this.dataPointer]; this.byteCells[this.dataPointer] = this.validateByte(this.byteCells[this.dataPointer]); };
+BrainfuckParser.prototype._46 = function() { this.output += String.fromCharCode(this.byteCells[this.dataPointer]); };
+BrainfuckParser.prototype._44 = function() { this.byteCells[this.dataPointer] = this.input.shift().charCodeAt(); console.log(this.byteCells[this.dataPointer]); };
+
+BrainfuckParser.prototype._91 = function() 
+{ 
+	if(this.byteCells[this.dataPointer] != 0)
+		return;
+
+	var bracketStack = [this.instructionPointer];
 	while(bracketStack.length != 0)
 	{
-		++instructionPointer;
+		++this.instructionPointer;
 
-		if(code[instructionPointer] == ']')
-			bracketStack.pop();
-		else if(code[instructionPointer] == '[')
-			bracketStack.push(instructionPointer);
+		switch(this.code[this.instructionPointer])
+		{
+			case ']':
+				bracketStack.pop();
+				break;
+
+			case '[':
+				bracketStack.push(this.instructionPointer);
+				break;
+		}		
 	}
-	return instructionPointer;
-}
+	return this.instructionPointer; 
+};
 
-commands.jumpBackward = function(code,instructionPointer, bracketStack)
-{
+BrainfuckParser.prototype._93 = function() 
+{ 
+	if(this.byteCells[this.dataPointer] == 0)
+		return;
+
+	var bracketStack = [this.instructionPointer];
 	while(bracketStack.length != 0)
 	{
-		--instructionPointer;
+		--this.instructionPointer;
 
-		if(code[instructionPointer] == ']')
-			bracketStack.push(instructionPointer);
-		else if(code[instructionPointer] == '[')
-			bracketStack.pop();
+		switch(this.code[this.instructionPointer])		
+		{
+			case ']':
+				bracketStack.push(this.instructionPointer);
+				break;
+
+			case '[':
+				bracketStack.pop();
+				break;
+		}
 	}
-	return instructionPointer;
-}
+	return this.instructionPointer;
+};
 
-function validateByte(byteValue)
+BrainfuckParser.prototype.validateByte = function(byteValue) 
 {
-	if(byteValue > 255)
+	if(this.byteValue > 255)
 		return 0;
-	if(byteValue < 0)
+	if(this.byteValue < 0)
 		return 255;
 	return byteValue;
-}
+};
 
-function getNewByteCells()
+BrainfuckParser.prototype.parse = function(code, input) 
 {
-	var byteCells = new Array(30000);
-	for(var i = 0; i < byteCells.length; ++i)
+	this.reset();
+	this.code = code.trim().replace(/ /g, "").replace(/(\r\n|\n|\r)/gm,"").split("");
+	this.input = input.split("");
+
+	do 
 	{
-		byteCells[i] = 0;
+		if(typeof this['_' + this.code[this.instructionPointer].charCodeAt(0)] === "undefined")
+			throw 'Syntax Error - Invalid Symbol';
+
+		this['_' + this.code[this.instructionPointer].charCodeAt(0)]();
 	}
-	return byteCells;
-}
+	while(++this.instructionPointer < this.code.length);
 
-function step(code,input,output)
-{		
-	var instructionPointer = 0;
-	var loop = 0 ;
-	do
-	{
-		if(code[instructionPointer] == '>')
-		{
-			commands.incrementDataPointer();
-		}
-		else if(code[instructionPointer] == '<')
-		{
-			commands.decrementDataPointer();
-		}
-		else if(code[instructionPointer] == '+')
-		{
-			commands.incrementByte();
-		}
-		else if(code[instructionPointer] == '-')
-		{
-			commands.decrementByte();
-		}
-		else if(code[instructionPointer] == '.')
-		{
-			output = commands.outputByte(output);
-		}
-		else if(code[instructionPointer] == ',')
-		{
-			input = commands.acceptInput(input);
-		}
-		else if(code[instructionPointer] == '[')
-		{	
-			if(byteCells[dataPointer] == 0)
-				instructionPointer = commands.jumpForward(code,instructionPointer, [instructionPointer]);
-		}
-		else if(code[instructionPointer] == ']')
-		{
-			if(byteCells[dataPointer] != 0)
-				instructionPointer = commands.jumpBackward(code,instructionPointer, [instructionPointer]);
-		}
-		else 
-			return 'Invalid input: ' + code[instructionPointer];
-
-		if(++loop > 900000000)
-		{
-			return output;
-		}
-
-	} while(++instructionPointer < code.length);
-	return output;
-}
-
-function interpret(brainfuck,input)
-{
-	byteCells = getNewByteCells();
-	dataPointer = 0;
-	output = "";
-
-	var code = brainfuck.trim().replace(/ /g, "").replace(/(\r\n|\n|\r)/gm,"").split("");
-	return step(code, input, output);
-}
+	return this.output;
+};
