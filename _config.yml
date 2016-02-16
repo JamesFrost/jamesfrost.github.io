@@ -1,0 +1,54 @@
+# Build settings
+# permalink   : /blog/:year/:title/
+permalink   : /:title/
+markdown    : kramdown
+highlighter : rouge
+
+paginate: 5
+paginate_path: "/blog/page/:num/"
+comments: true
+
+source: source
+destination: _site
+sass:
+  sass_dir: _scss
+  style: compressed # expanded
+
+# SEO settings
+title: James Frost
+description: "Software Developer living in London"
+keywords: "James, Frost, Software, Developer, Programming"
+url: http://jamesfrost.me
+disqus_site_shortname: 'jamesfrost'
+# baseurl: "."
+# baseurl: ".."
+baseurl: "http://jamesfrost.me"
+# baseurl: "/"
+
+google_analytics: UA-58426975-1
+
+gems: ['jekyll-paginate', 'blankslate']
+
+# Author settings
+author:
+  name      : James Frost
+  job       : Software Developer
+  company   : Blurrt
+  bio       : "James is interested in programming and design. He is currently studying Computer Science at City of London University."
+  thumb     : /images/author.jpg
+  email     : hello@jamesfrost.me
+  url       : http://jamesfrost.me
+  github    : https://github.com/JamesFrost
+  twitter   : https://twitter.com/_JamesFrost
+  linkedin  : https://www.linkedin.com/in/jamesfrost2
+
+# navbar pages
+navbar:
+  - slug: 
+    title: About
+  - slug: cv
+    title: Cv
+  - slug: blog
+    title: Blog
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
