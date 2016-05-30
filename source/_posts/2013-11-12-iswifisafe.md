@@ -3,7 +3,7 @@ layout: post
 title: "Is Wifi Safe"
 date: 2013-11-12 16:42:24
 comments: true
-description: "Report on the physical and data security implications of wifi"
+description: "Report on the physical and data security implications of wifi."
 keywords: ""
 category: project
 projectlinks: 
