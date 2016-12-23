@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "sentiBotr"
-date: 2014-10-30 12:00:00
+date: 2014-10-30
 comments: true
 description: "Twitter bot that analyses and tweets the sentiment of trending topics in the UK."
 keywords: ""

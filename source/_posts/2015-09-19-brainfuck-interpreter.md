@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Brainfuck Interpreter"
-date: 2015-09-19 15:05:03
+date: 2015-09-19
 comments: true
 description: "Javascript interpreter for the Brainfuck programming language."
 keywords: "javascript, brainfuck, interpreter"

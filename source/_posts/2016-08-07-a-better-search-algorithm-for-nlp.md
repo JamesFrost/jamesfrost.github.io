@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Better Search Algorithm For Natural Language Processing"
-date: 2016-08-07 12:05:03
+date: 2016-08-07
 comments: true
 description: "Improving the performance of natural language processing search algorithms."
 keywords: "blurrt, regular expression, search, algorithm"

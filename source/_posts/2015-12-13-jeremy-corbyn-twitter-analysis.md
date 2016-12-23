@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Analysing Twitter Conversation About Jeremy Corbyn"
-date: 2015-12-13 19:36:18
+date: 2015-12-13
 comments: true
 description: "Identifying and explaining areas of conversation around Jeremy Corbyn."
 keywords: "jeremy, corbyn, data, mining, analysis, report, twitter, sentiment, clustering, location, opinion"
