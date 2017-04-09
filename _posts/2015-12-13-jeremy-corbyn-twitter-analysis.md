@@ -14,7 +14,9 @@ The dataset consisted of ~1000 geotagged Tweets about Jeremy Corbyn. The Tweets 
 <h3>Noise Removal</h3>
 <p>After some initial testing, it became apparent that there were a significant number of neutral Tweets, i.e  the ‘sentiment_score’ attribute was 0.</p>
 
-<img src="{{ site.url | append: '/img/jeremy-corbyn-twitter-analysis/histogram1.png' }}" class="img-center">
+<div class="text-center">
+	<img src="{{ site.url | append: '/img/jeremy-corbyn-twitter-analysis/histogram1.png' }}" class="img-center">
+</div>
 
 This disproportionate number of neutral Tweets was greatly affecting results. Tweets scored as neutral are generally objective - for example, ‘Corbyn's Momentum group moves to block influence of hard-left parties’ is objective and as such sentiment scored as neutral. As I aim to identify demographics and their opinions, it is more relevant to analyse subjective Tweets. As such, I chose to filter out all Tweets with neutral sentiment.
 
