@@ -17,9 +17,9 @@ This is an additional layer of complexity in the NLP process; not only does the 
 
 <img src="{{ site.url | append: '/img/more-meaningful-nlp/dependencies.png' }}" class="img-center">
 
-Linking sentiment words their directly related entities is relatively easy. What's more difficult is linking sentiment words to entities that they are indirectly associated with.
+Linking sentiment words to their directly related entities is relatively easy. What's more difficult is linking sentiment words to entities that they are indirectly associated with.
 
-One example of this is Coreference Resolution, which is the process of linking pronouns back to the root entities they reference. For example:
+One example of this is Coreference Resolution, which is the process of finding all expressions that refer to the same entity. For example:
 
 > I hate David. He is nasty.
 
