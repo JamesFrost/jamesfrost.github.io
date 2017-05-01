@@ -475,6 +475,9 @@ footer .theme-by {
 .intro-header .post-heading .post-subheading {
   margin-bottom: 20px;
 }
+.has-img .post-heading .post-subheading {
+  -webkit-text-stroke:0.6px black;
+}
 .intro-header.big-img .page-heading .page-subheading,
 .intro-header.big-img .post-heading .post-subheading {
   font-weight: 400;
@@ -515,6 +518,11 @@ footer .theme-by {
   .intro-header .post-heading h1 {
     font-size: 50px;
   }
+
+  .has-img .post-heading h1 {
+    -webkit-text-stroke: 1.5px black;
+  }
+
   .intro-header.big-img .img-desc {
     font-size: 14px;
   }

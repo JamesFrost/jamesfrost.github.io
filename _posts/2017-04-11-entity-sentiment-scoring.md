@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Exploring The Challenges Of Entity Specific Sentiment Scoring"
+title: "Exploring the Challenges of Entity Specific Sentiment Scoring"
+share-img: "/img/more-meaningful-nlp/dependencies.png"
 tags: [report]
 ---
 
