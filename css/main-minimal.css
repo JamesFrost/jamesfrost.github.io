@@ -13,9 +13,7 @@ footer.footer-min {
 }
 
 .img-center {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
