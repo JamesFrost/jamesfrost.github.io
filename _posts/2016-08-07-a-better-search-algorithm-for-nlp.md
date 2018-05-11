@@ -14,7 +14,7 @@ tags: [blurrt, project]
 <p>To start, I first analysed the sequential search algorithm I was using, as any performance gains would be measured relative to it.</p>
 
 <h3>Sequential Search Pseudocode</h3>
-<img src="{{ '/img/a-better-search-algorithm-for-nlp/small-sequential-search-pseudo.png' | prepend: site.baseurl}}">
+<img src="/img/a-better-search-algorithm-for-nlp/small-sequential-search-pseudo.png">
 
 <h3>Sequential Search Time Complexity</h3>
 <table>
