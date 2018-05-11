@@ -49,7 +49,7 @@ tags: [blurrt, project]
 <p>The improved algorithm works by splitting the lists of regular expressions up into chunks, and doing a single preliminary regular expression search for each chunk. If the preliminary search finds a match, then it will search for each regular expresion in the chunk individually.</p>
 
 <h3>Chunking Algorithm Pseudocode</h3>
-<img src="{{ '/img/a-better-search-algorithm-for-nlp/small-chunk-search-pseudo.png' | prepend: site.url}}">
+<img src="/img/a-better-search-algorithm-for-nlp/small-chunk-search-pseudo.png">
 
 <h3>Chunking Algorithm Time Complexity</h3>
 <table>
@@ -89,16 +89,16 @@ tags: [blurrt, project]
 <p>Optimal chunk size is inversely proportional to the probability of a match. Once the probability of a match has been found, optimal chunk size can be calculated.</p>
 
 <br>
-<img src="{{ '/img/a-better-search-algorithm-for-nlp/eq1.gif' | prepend: site.url}}" class="img-center">
+<img src="/img/a-better-search-algorithm-for-nlp/eq1.gif" class="img-center">
 <br>
-<img src="{{ '/img/a-better-search-algorithm-for-nlp/eq2.gif' | prepend: site.url}}" class="img-center">
+<img src="/img/a-better-search-algorithm-for-nlp/eq2.gif" class="img-center">
 <br>
 <p>To test the relationship between chunk size and processing time, I recorded processing time for a range of chunk sizes. I searched against text that had an equal probability of 0 - 3 matches. The graph below shows the results of this test.</p>
 
-<img src="{{ '/img/a-better-search-algorithm-for-nlp/chunk-size-processing-time.png' | prepend: site.url}}" class="img-center">
+<img src="/img/a-better-search-algorithm-for-nlp/chunk-size-processing-time.png" class="img-center">
 
 <p>As the graph shows, chunk size can have a dramatic effect on processing time.</p>
 
 <p>Once I had calculated the probability of a match, I used the formula above to calculate the optimal chunk size for my application. With an appropriate chunk size chosen, the chunking algorithm has reduced processing time by ~90% compared to sequential search, effectively solving the performance issues we were having.</p>
 
-<img src="{{ '/img/a-better-search-algorithm-for-nlp/algorithm-comparison.png' | prepend: site.url}}" class="img-center">
+<img src="/img/a-better-search-algorithm-for-nlp/algorithm-comparison.png" class="img-center">
