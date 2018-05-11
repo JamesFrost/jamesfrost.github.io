@@ -5,7 +5,7 @@ share-img: "/img/more-meaningful-nlp/dependencies.png"
 tags: [report]
 ---
 
-A problem with traditional sentiment analysis is that it lacks context; it typically only gives an overall sentiment value for the text. This isn’t particularly insightful as people can express different opinions (positive/negative) about different subjects within one body of text. For example: 
+A problem with traditional sentiment analysis is that it lacks context; it typically only gives an overall sentiment value for the text. This isn’t particularly insightful as people can express different opinions (positive/negative) about different subjects within one body of text. For example:
 
 > I hate Cameron, but I love Corbyn.
 
@@ -15,7 +15,7 @@ A more meaningful output would consider both of the different opinions. As menti
 
 This is an additional layer of complexity in the NLP process; not only does the system have to identify what is a sentiment bearing word, but subsequently identify what subject the sentiment applies to.
 
-<img src="{{ site.url | append: '/img/more-meaningful-nlp/dependencies.png' }}" class="img-center">
+<img src="/img/more-meaningful-nlp/dependencies.png" class="img-center">
 
 Linking sentiment words to their directly related entities is relatively easy. What's more difficult is linking sentiment words to entities that they are indirectly associated with.
 
@@ -27,7 +27,7 @@ The sentiment bearing word 'nasty' is directly related to the entity 'he', which
 
 Identifying what entities refer to each other becomes even more difficult when pronouns aren't involved. For example:
 
-> David Cameron is terrible. I hate the Prime Minister. 
+> David Cameron is terrible. I hate the Prime Minister.
 
 Here you would need to identify that 'David Cameron' refers to the same entity as 'Prime Minister'. In my opinion, this level of disambiguation would have to be domain specific.
 
