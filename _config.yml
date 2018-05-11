@@ -17,7 +17,7 @@ description: Software Developer based in London
 
 # List of links in the navigation bar
 navbar-links:
-  CV: "cv"
+  CV: "cv/"
   # Resources:
   #   - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
   #   - Learn markdown: "http://www.markdowntutorial.com/"
