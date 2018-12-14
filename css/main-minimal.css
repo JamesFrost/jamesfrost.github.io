@@ -11,11 +11,3 @@ footer.footer-min {
   border-top: 1px solid #eeeeee;
   text-align: center;
 }
-
-.img-center {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-}
