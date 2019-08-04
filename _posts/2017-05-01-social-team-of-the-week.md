@@ -8,11 +8,12 @@ tags: [event, blurrt]
 
 The idea of a 'Team of the Week' is simple; choose a team of players to highlight the best performances of the past week. Usually, this team is chosen by a pundit. However, Sky Sports have teamed up with Blurrt to produce the 'Social Team of the Week', decided by Twitter conversation.
 
-<img data-normal="/img/sky-sports-team-of-the-week/ssn-2.png" class="img-responsive center-block">
+<img data-normal="/img/sky-sports-team-of-the-week/ssn-2.jpg" class="img-responsive center-block">
 
 The players rating is calculated using Blurrt Score, a metric that measures audience reaction by looking at sentiment expressed as well as the volume of the conversation. From this rating, a team is formed by selecting the highest scoring players in their respective positions.
 
-<img data-normal="/img/sky-sports-team-of-the-week/team-14.png" class="img-responsive center-block">
+<img data-normal="/img/sky-sports-team-of-the-week/team-14.jpg" class="img-responsive center-block">
+<br>
 <img data-normal="/img/sky-sports-team-of-the-week/ssn-1.gif" class="img-responsive center-block">
 
 We also provided support throughout the 18 hour ‘Deadline Day’ live program, providing social snapshots of how people were reacting to all the day’s breaking and biggest stories.
