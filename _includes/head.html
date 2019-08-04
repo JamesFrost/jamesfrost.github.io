@@ -3,6 +3,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/layzr.js/2.2.2/layzr.min.js" integrity="sha256-SQIv8XqbNjc3Nw2XAoEFs43fUfNtyLfD1tLzaP4J/98=" crossorigin="anonymous"></script>
+
   <title>{% if page.use-site-title %}{{ site.title }} {{ site.title-separator }} {{ site.description }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
   <meta name="author" content="{{ site.author.name }}" />
@@ -87,7 +89,7 @@
   <meta property="og:image" content="{{ site.url | append:page.share-img }}" />
   {% elsif site.avatar %}
   <meta property="og:image" content="{{ site.url }}{{ site.avatar }}" />
-  {% endif %}  
+  {% endif %}
 
   <!-- Twitter summary cards -->
   <meta name="twitter:card" content="summary" />
