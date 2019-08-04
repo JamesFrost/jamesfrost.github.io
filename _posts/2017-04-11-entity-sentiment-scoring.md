@@ -15,7 +15,7 @@ A more meaningful output would consider both of the different opinions. As menti
 
 This is an additional layer of complexity in the NLP process; not only does the system have to identify what is a sentiment bearing word, but subsequently identify what subject the sentiment applies to.
 
-<img src="/img/more-meaningful-nlp/dependencies.png" class="img-responsive center-block">
+<img data-normal="/img/more-meaningful-nlp/dependencies.png" class="img-responsive center-block">
 
 Linking sentiment words to their directly related entities is relatively easy. What's more difficult is linking sentiment words to entities that they are indirectly associated with.
 
