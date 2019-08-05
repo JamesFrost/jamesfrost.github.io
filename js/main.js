@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', event => {
     .handlers(true)
 })
 
+window.addEventListener('load', () =>{
+   quicklink();
+});
+
 var main = {
 
   bigImgEl : null,
