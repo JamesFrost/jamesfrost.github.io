@@ -48,38 +48,44 @@ Four out of the five cluster centers fall within the UK, with only cluster one f
 
 When comparing the number of cases in the cluster to the population of the locality the cluster falls on, we can see that the two are positively correlated. I have ignored cluster one here because it only contains one case. This suggests that when looking at coordinates alone, population density was more likely effect number of Tweets than location.
 
-<table>
-	<tr>
-		<th>Cluster Number</th>
-		<th>Number of Cases In Cluster</th>
-		<th>Locality</th>
-		<th>Population</th>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td>191</td>
-		<td>Greater London</td>
-		<td>8,538,689</td>
-	</tr>
-	<tr>
-		<td>4</td>
-		<td>141</td>
-		<td>West Yorkshire</td>
-		<td>443,247</td>
-	</tr>
-	<tr>
-		<td>3</td>
-		<td>111</td>
-		<td>Gloucestershire</td>
-		<td>123,205</td>
-	</tr>
-	<tr>
-		<td>5</td>
-		<td>33</td>
-		<td>Ayrshire </td>
-		<td>366,800</td>
-	</tr>
-</table>
+<div class="table-responsive">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Cluster Number</th>
+				<th>Number of Cases In Cluster</th>
+				<th>Locality</th>
+				<th>Population</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>2</td>
+				<td>191</td>
+				<td>Greater London</td>
+				<td>8,538,689</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>141</td>
+				<td>West Yorkshire</td>
+				<td>443,247</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>111</td>
+				<td>Gloucestershire</td>
+				<td>123,205</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>33</td>
+				<td>Ayrshire </td>
+				<td>366,800</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 
 However, when looking at the spread of points from the centroid, it becomes clear that while clusters 2, 3 and 4 are approximately equally homogeneous, cluster number 5 is significantly less homogeneous. We can tell this as the cases in cluster 5 are more spread out along the vertical.
 
