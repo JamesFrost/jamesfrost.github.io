@@ -11,7 +11,7 @@ layout: base
       <article role="main" class="blog-post">
 
         {% if page.non-preview-text %}
-          <i><a href="{{ page.non-preview-link }}">{{ page.non-preview-text }}</a></i>
+          <i><a target="_blank" href="{{ page.non-preview-link }}">{{ page.non-preview-text }}</a></i>
         {% endif %}
 
         {{ content }}
