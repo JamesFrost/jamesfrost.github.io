@@ -3,8 +3,6 @@ layout: post
 title: "Best Practices for On-Call Processes"
 subtitle: "Save your engineers sleep"
 share-img: "/img/sky-sports-team-of-the-week/ssn-2.png"
-non-preview-text: "Originally posted on the Ably blog."
-non-preview-link: "https://ably.com/blog/best-practices-for-on-call-processes"
 tags: []
 ---
 

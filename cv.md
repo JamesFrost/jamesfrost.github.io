@@ -7,13 +7,32 @@ title: CV
 
 ## Experience
 
-### Senior Site Reliability Engineer - Ably Realtime
 
-#### May 2020 - Present
+### Engineering Lead, Infrastructure - Ably Realtime
+
+#### July 2022 - Present
 {: .subtitle }
 
+* Lead a cross functional team of engineers responsible for the company's infrastructure.
+* Line managed SREs and mentored them, progressing their careers and helping them obtain promotions.
+* Identified and led key projects that were required for the company to meet its goals.
+* Migrated the core application from CloudFormation to Terraform with no disruption to customers or colleagues.
+* Redesigned the company's multi-region network from scratch to ensure it was suitable for future requirements.
+* Accountable for migrating from ElasticSearch to Loki, which reduced costs and increased performance.
 
-### Site Reliability Engineer - MyDrive Solutions Limited
+
+### Senior Site Reliability Engineer - Ably Realtime
+
+#### May 2020 - July 2022
+{: .subtitle }
+
+* [Implemented monitoring systems that tracked thousands of EC2 instances in multiple AWS regions in order to ensure the company achieved its 5x9 availability SLA.](/best-practices-for-on-call-processes/){:target="_blank"}
+* Worked with AWS in order to pass the AWS Technical Baseline Review and become AWS Partners.
+* Introduced Terraform to the company, including defining best practices and CI processes.
+* Migrated the core application to Docker.
+
+
+### Site Reliability Engineer - MyDrive Solutions
 
 #### November 2017 - April 2020
 {: .subtitle }
@@ -54,10 +73,7 @@ title: CV
 
 ## Education
 
-### City University London - Computer Science BSc (Hons) - 1st Class
-
-#### 2013 - 2016
-{: .subtitle }
+### City University London - Computer Science BSc (Hons) - First Class
 
 
 ***
@@ -66,14 +82,8 @@ title: CV
 
 ### AWS - Certified Solutions Architect - Associate
 
-#### 2020
-{: .subtitle }
-
 
 ### AWS - Certified Developer - Associate
-
-#### 2020
-{: .subtitle }
 
 
 ***
