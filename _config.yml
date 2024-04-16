@@ -38,8 +38,7 @@ navbar-links:
 author:
   name: James Frost
   email: "hello@jamesfrost.me"
-  github: JamesFrost
-  twitter: _JamesFrost
+  github: JamesFrost  
   linkedin: jamesfrost2
 
 # Select which links to show in the footer
@@ -47,7 +46,7 @@ footer-links-active:
   rss: false
   facebook: false
   email: true
-  twitter: true
+  twitter: false
   google-plus: false
   github: true
   reddit: false
