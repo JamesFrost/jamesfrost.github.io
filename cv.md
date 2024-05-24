@@ -88,22 +88,14 @@ title: CV
 
 ***
 
-## Technical Skills
-* Proficient with:
+## Programming Languages
+* Prior experience with:
   * Ruby
-  * Java
-  * Javascript
+  * Go  
+  * Javascript/NodeJS
   * PHP
-  * Nodejs
-* Able to use AWS services to solve complex problems.
-* Can provision and manage infrastructure using Terraform.
-* Confident managing Linux based servers via the Command Line.
+  * Java
 
-***
-
-## Non-Technical Skills
-* Experienced in working in an Agile environment.
-* Able to manage time constraints and unpredictable schedules across different projects.
 
 ***
 
