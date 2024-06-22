@@ -8,9 +8,15 @@ title: CV
 ## Experience
 
 
+### Senior Site Reliability Engineer - X (formerly Twitter)
+
+#### May 2024 - Present
+{: .subtitle }
+
+
 ### Engineering Lead, Infrastructure - Ably Realtime
 
-#### July 2022 - Present
+#### July 2022 - March 2024
 {: .subtitle }
 
 * Lead a cross functional team of engineers responsible for the company's infrastructure.
@@ -92,7 +98,7 @@ title: CV
 * Prior experience with:
   * Ruby
   * Go  
-  * Javascript/NodeJS
+  * Javascript/NodeJS  
   * PHP
   * Java
 
