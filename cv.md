@@ -7,10 +7,15 @@ title: CV
 
 ## Experience
 
+### Member of Technical Staff - xAI
+
+#### April 2025 - Present
+{: .subtitle }
+
 
 ### Senior Site Reliability Engineer - X (formerly Twitter)
 
-#### May 2024 - Present
+#### May 2024 - April 2025
 {: .subtitle }
 
 
