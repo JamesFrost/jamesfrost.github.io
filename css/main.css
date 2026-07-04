@@ -121,22 +121,8 @@ img {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* Always show nav links (no hamburger for a single CV item) */
-.navbar-custom .navbar-collapse {
-  display: block !important;
-  height: auto !important;
-  padding-bottom: 0;
-  overflow: visible !important;
-  border-top: 0;
-  box-shadow: none;
-}
-.navbar-custom .navbar-nav {
-  margin: 0;
-  float: right;
-}
-.navbar-custom .navbar-nav > li {
-  float: left;
-  height: 50px;
+/* Single-row bar: brand left, CTA right (no mobile stack / content overlap) */
+.navbar-custom .container-fluid {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -145,14 +131,62 @@ img {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  min-height: 50px;
 }
+
 .navbar-custom .navbar-header {
-  float: left;
+  float: none;
+  margin: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.navbar-custom .navbar-collapse {
+  display: block !important;
+  float: none;
+  width: auto;
+  height: auto !important;
+  margin: 0;
+  padding: 0;
+  overflow: visible !important;
+  border-top: 0;
+  box-shadow: none;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.navbar-custom .navbar-nav {
+  margin: 0;
+  float: none;
+}
+
+.navbar-custom .navbar-nav > li {
+  float: none;
+  height: auto;
+  display: block;
 }
 
 .navbar-custom .navbar-brand {
   font-weight: 800;
   color: #404040;
+  float: none;
+  height: auto;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .navbar-custom .navbar-brand:hover,
@@ -163,13 +197,14 @@ img {
 /* Single primary nav action — outlined pill, not a plain menu link */
 .navbar-custom .nav li a.nav-cta {
   display: inline-block;
-  margin: 0 15px;
-  padding: 6px 18px;
+  margin: 0 0 0 8px;
+  padding: 5px 12px;
   line-height: 1.3;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
+  white-space: nowrap;
   color: #0085a1;
   background: transparent;
   border: 2px solid #0085a1;
@@ -192,6 +227,16 @@ img {
   background: #0085a1;
   border-color: #0085a1;
 }
+
+@media only screen and (min-width: 768px) {
+  .navbar-custom .nav li a.nav-cta {
+    margin-left: 15px;
+    padding: 6px 18px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+}
+
 
 
 
