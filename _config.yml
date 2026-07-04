@@ -71,15 +71,6 @@ share-links-active:
 url-pretty: "jamesfrost.me"
 
 # --- Misc --- #
-# Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-disqus: "jamesfrost"
-
-# Fill in your Google Analytics ID to track your website using GA
-google_analytics: "UA-58426975-1"
-
-# Google Tag Manager ID
-#gtm: ""
-
 # Excerpt Word Length
 # Truncates the excerpt to the specified number of words on the index page
 excerpt_length: 50
@@ -108,8 +99,8 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: true  # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
+
   -
     scope:
       path: "" # all files

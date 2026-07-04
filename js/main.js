@@ -1,104 +1,98 @@
-// Dean Attali / Beautiful Jekyll 2016
-
-const layzr = Layzr()
-
-document.addEventListener('DOMContentLoaded', event => {
-  layzr
-    .update()
-    .check()
-    .handlers(true)
-})
-
-window.addEventListener('load', () =>{
-   quicklink();
-});
-
-var main = {
-
-  bigImgEl : null,
-  numImgs : null,
-
-  init : function() {
-    // Shorten the navbar after scrolling a little bit down
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $(".navbar").addClass("top-nav-short");
-        } else {
-            $(".navbar").removeClass("top-nav-short");
-        }
-    });
-
-    // show the big header image
-    main.initImgs();
-  },
-
-  initImgs : function() {
-    // If the page was large images to randomly select from, choose an image
-    if ($("#header-big-imgs").length > 0) {
-      main.bigImgEl = $("#header-big-imgs");
-      main.numImgs = main.bigImgEl.attr("data-num-img");
-
-          // 2fc73a3a967e97599c9763d05e564189
-	  // set an initial image
-	  var imgInfo = main.getImgInfo();
-	  var src = imgInfo.src;
-	  var desc = imgInfo.desc;
-  	  main.setImg(src, desc);
-
-	  // For better UX, prefetch the next image so that it will already be loaded when we want to show it
-  	  var getNextImg = function() {
-	    var imgInfo = main.getImgInfo();
-	    var src = imgInfo.src;
-	    var desc = imgInfo.desc;
-
-		var prefetchImg = new Image();
-  		prefetchImg.src = src;
-		// if I want to do something once the image is ready: `prefetchImg.onload = function(){}`
-
-  		setTimeout(function(){
-                  var img = $("<div></div>").addClass("big-img-transition").css("background-image", 'url(' + src + ')');
-  		  $(".intro-header.big-img").prepend(img);
-  		  setTimeout(function(){ img.css("opacity", "1"); }, 50);
-
-		  // after the animation of fading in the new image is done, prefetch the next one
-  		  //img.one("transitioned webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-		  setTimeout(function() {
-		    main.setImg(src, desc);
-			img.remove();
-  			getNextImg();
-		  }, 1000);
-  		  //});
-  		}, 6000);
-  	  };
-
-	  // If there are multiple images, cycle through them
-	  if (main.numImgs > 1) {
-  	    getNextImg();
-	  }
+function initSite() {
+  // Posts used Layzr with empty src + data-normal — resolve to real sources
+  var lazyImgs = document.querySelectorAll("img[data-normal]");
+  for (var i = 0; i < lazyImgs.length; i++) {
+    var img = lazyImgs[i];
+    var src = img.getAttribute("data-normal");
+    if (src) {
+      img.setAttribute("src", src);
+      img.setAttribute("loading", "lazy");
+      img.removeAttribute("data-normal");
     }
-  },
-
-  getImgInfo : function() {
-  	var randNum = Math.floor((Math.random() * main.numImgs) + 1);
-    var src = main.bigImgEl.attr("data-img-src-" + randNum);
-	var desc = main.bigImgEl.attr("data-img-desc-" + randNum);
-
-	return {
-	  src : src,
-	  desc : desc
-	}
-  },
-
-  setImg : function(src, desc) {
-	$(".intro-header.big-img").css("background-image", 'url(' + src + ')');
-	if (typeof desc !== typeof undefined && desc !== false) {
-	  $(".img-desc").text(desc).show();
-	} else {
-	  $(".img-desc").hide();
-	}
   }
-};
 
-// 2fc73a3a967e97599c9763d05e564189
+  var navbar = document.querySelector(".navbar");
+  if (navbar) {
+    var onScroll = function () {
+      if (window.pageYOffset > 50) {
+        navbar.classList.add("top-nav-short");
+      } else {
+        navbar.classList.remove("top-nav-short");
+      }
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
 
-document.addEventListener('DOMContentLoaded', main.init);
+  initBigImgs();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSite);
+} else {
+  initSite();
+}
+
+function initBigImgs() {
+  var bigImgEl = document.getElementById("header-big-imgs");
+  if (!bigImgEl) return;
+
+  var numImgs = parseInt(bigImgEl.getAttribute("data-num-img"), 10) || 0;
+  if (numImgs < 1) return;
+
+  var header = document.querySelector(".intro-header.big-img");
+  var descEl = document.querySelector(".img-desc");
+
+  function getImgInfo() {
+    var randNum = Math.floor(Math.random() * numImgs) + 1;
+    return {
+      src: bigImgEl.getAttribute("data-img-src-" + randNum),
+      desc: bigImgEl.getAttribute("data-img-desc-" + randNum)
+    };
+  }
+
+  function setImg(src, desc) {
+    if (!header) return;
+    header.style.backgroundImage = "url(" + src + ")";
+    if (descEl) {
+      if (desc) {
+        descEl.textContent = desc;
+        descEl.style.display = "block";
+      } else {
+        descEl.style.display = "none";
+      }
+    }
+  }
+
+  var first = getImgInfo();
+  setImg(first.src, first.desc);
+
+  if (numImgs < 2 || !header) return;
+
+  function cycle() {
+    var info = getImgInfo();
+    var prefetch = new Image();
+    prefetch.src = info.src;
+
+    setTimeout(function () {
+      var transition = document.createElement("div");
+      transition.className = "big-img-transition";
+      transition.style.backgroundImage = "url(" + info.src + ")";
+      header.insertBefore(transition, header.firstChild);
+
+      setTimeout(function () {
+        transition.style.opacity = "1";
+      }, 50);
+
+      setTimeout(function () {
+        setImg(info.src, info.desc);
+        if (transition.parentNode) {
+          transition.parentNode.removeChild(transition);
+        }
+        cycle();
+      }, 1000);
+    }, 6000);
+  }
+
+  cycle();
+}

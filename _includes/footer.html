@@ -2,169 +2,28 @@
   <div class="container beautiful-jekyll-footer">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="list-inline text-center footer-links">
-          {% if site.author.facebook and site.footer-links-active.facebook %}
-          <li>
-            <a target="_blank" href="https://www.facebook.com/{{ site.author.facebook }}" title="Facebook">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="sr-only">Facebook</span>
-            </a>
-          </li>
-          {% endif %}
+        <ul class="footer-links">
           {% if site.author.github and site.footer-links-active.github %}
           <li>
-            <a target="_blank" href="https://github.com/{{ site.author.github }}" title="GitHub">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-              </span>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/{{ site.author.github }}" title="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.05-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               <span class="sr-only">GitHub</span>
             </a>
           </li>
           {% endif %}
-		  {% if site.author.twitter and site.footer-links-active.twitter %}
+          {% if site.author.linkedin and site.footer-links-active.linkedin %}
           <li>
-            <a target="_blank" href="https://twitter.com/{{ site.author.twitter }}" title="Twitter">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="sr-only">Twitter</span>
-            </a>
-          </li>
-          {% endif %}
-	  {% if site.author.reddit and site.footer-links-active.reddit %}
-          <li>
-            <a target="_blank" href="https://reddit.com/u/{{ site.author.reddit }}" title="Reddit">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="sr-only">Reddit</span>
-            </a>
-          </li>
-          {% endif %}
-      {% if site.author.google-plus and site.footer-links-active.google-plus %}
-          <li>
-            <a target="_blank" href="https://plus.google.com/{{ site.author.google-plus }}" title="Google+">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="sr-only">Google+</span>
-            </a>
-          </li>
-          {% endif %}
-		  {% if site.author.email and site.footer-links-active.email %}
-          <li>
-            <a target="_blank" href="mailto:{{ site.author.email }}" title="Email me">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="sr-only">Email me</span>
-            </a>
-          </li>
-          {% endif %}
-		  {% if site.author.linkedin and site.footer-links-active.linkedin %}
-          <li>
-            <a target="_blank" href="https://linkedin.com/in/{{ site.author.linkedin }}" title="LinkedIn">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-              </span>
+            <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/{{ site.author.linkedin }}" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"/></svg>
               <span class="sr-only">LinkedIn</span>
             </a>
           </li>
           {% endif %}
-		  {% if site.author.xing and site.footer-links-active.xing %}
+          {% if site.author.email and site.footer-links-active.email %}
           <li>
-            <a target="_blank" href="https://www.xing.com/profile/{{ site.author.xing }}" title="Xing">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="sr-only">Xing</span>
-            </a>
-          </li>
-          {% endif %}
-		  {% if site.author.stackoverflow and site.footer-links-active.stackoverflow %}
-          <li>
-            <a target="_blank" href="https://stackoverflow.com/users/{{ site.author.stackoverflow }}" title="StackOverflow">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="sr-only">StackOverflow</span>
-            </a>
-          </li>
-          {% endif %}
-      {% if site.author.snapchat and site.footer-links-active.snapchat %}
-          <li>
-            <a target="_blank" href="https://www.snapchat.com/add/{{ site.author.snapchat }}" title="Snapchat">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="sr-only">Snapchat</span>
-            </a>
-          </li>
-          {% endif %}
-      {% if site.author.instagram and site.footer-links-active.instagram %}
-          <li>
-            <a target="_blank" href="https://www.instagram.com/{{ site.author.instagram }}" title="Instagram">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="sr-only">Instagram</span>
-            </a>
-          </li>
-          {% endif %}
-      {% if site.author.youtube and site.footer-links-active.youtube %}
-          <li>
-            <a target="_blank" href="https://www.youtube.com/{{ site.author.youtube }}" title="YouTube">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="sr-only">YouTube</span>
-            </a>
-          </li>
-          {% endif %}
-      {% if site.author.spotify and site.footer-links-active.spotify %}
-          <li>
-            <a target="_blank" href="https://open.spotify.com/user/{{ site.author.spotify }}" title="Spotify">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="sr-only">Spotify</span>
-            </a>
-          </li>
-       {% endif %}
-      {% if site.author.telephone and site.footer-links-active.telephone %}
-          <li>
-            <a target="_blank" href="tel:{{ site.author.telephone }}" title="Phone">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="sr-only">Phone</span>
-            </a>
-          </li>
-        {% endif %}
-		  {% if site.footer-links-active.rss %}
-          <li>
-            <a href="{{ '/feed.xml' | prepend: site.baseurl }}" title="RSS">
-              <span class="fa-stack fa-lg" aria-hidden="true">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-              </span>
-              <span class="sr-only">RSS</span>
+            <a href="mailto:{{ site.author.email }}" title="Email me">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span class="sr-only">Email me</span>
             </a>
           </li>
           {% endif %}
