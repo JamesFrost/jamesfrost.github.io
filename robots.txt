@@ -1,6 +1,53 @@
-# Allow all crawlers by default. AI-specific rules can be refined later.
+# Default: open crawl for all agents. Content Signals declare post-access preferences
+# (https://contentsignals.org/). Flip ai-train=no if you want to disallow training use.
 User-agent: *
 Allow: /
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
+# Explicit AI crawler rules (same policy as default; listed so scanners can detect them).
+User-agent: GPTBot
+Allow: /
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
+User-agent: ChatGPT-User
+Allow: /
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
+User-agent: ClaudeBot
+Allow: /
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
+User-agent: anthropic-ai
+Allow: /
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
+User-agent: Google-Extended
+Allow: /
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
+User-agent: Applebot-Extended
+Allow: /
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
+User-agent: PerplexityBot
+Allow: /
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
+User-agent: Amazonbot
+Allow: /
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
+User-agent: Bytespider
+Allow: /
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
+User-agent: CCBot
+Allow: /
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
+User-agent: meta-externalagent
+Allow: /
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
 
 # Canonical host while dual-publishing (GitHub Pages + Cloudflare Pages).
 Sitemap: https://jamesfrost.me/sitemap.xml

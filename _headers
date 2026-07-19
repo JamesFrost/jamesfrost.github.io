@@ -1,4 +1,6 @@
 # Cloudflare Pages only (GitHub Pages ignores this file).
-# Agent discovery: advertise the sitemap via Link response headers (RFC 8288).
+# Agent discovery via Link response headers (RFC 8288).
 /*
   Link: </sitemap.xml>; rel="sitemap"
+  Link: </feed.xml>; rel="alternate"; type="application/rss+xml"
+  Link: </llms.txt>; rel="describedby"; type="text/plain"

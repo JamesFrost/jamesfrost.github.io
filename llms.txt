@@ -1,0 +1,41 @@
+# James Frost
+
+> Personal site of James Frost, Site Reliability Engineer based in London.
+
+Canonical site: https://jamesfrost.me
+Also published at: https://jfro.st (Cloudflare Pages mirror)
+
+## About
+
+James is a Site Reliability Engineer / Member of Technical Staff focused on infrastructure, reliability, observability, and large-scale systems. Experience includes xAI, X (formerly Twitter), Ably Realtime, MyDrive Solutions, and Blurrt (NLP / real-time social analytics).
+
+Contact: hello@jamesfrost.me
+GitHub: https://github.com/JamesFrost
+LinkedIn: https://linkedin.com/in/jamesfrost2
+
+## Key pages
+
+- [Home / posts](https://jamesfrost.me/): Blog index
+- [CV](https://jamesfrost.me/cv/): Work history and experience
+- [RSS feed](https://jamesfrost.me/feed.xml): Post feed
+- [Sitemap](https://jamesfrost.me/sitemap.xml): Machine-readable URL list
+- [robots.txt](https://jamesfrost.me/robots.txt): Crawl and content-use preferences
+
+## Selected writing
+
+- [Harnessing Social Media Sentiment for EURUSD Trading](https://jamesfrost.me/twitter-forex/) (2024)
+- [Best Practices for On-Call Processes](https://jamesfrost.me/best-practices-for-on-call-processes/) (2022)
+- [Sky Sports Social Team of the Week](https://jamesfrost.me/social-team-of-the-week/) (2017)
+- [Exploring Entity Specific Sentiment Scoring](https://jamesfrost.me/entity-sentiment-scoring/) (2017)
+- [A Better Search Algorithm For NLP](https://jamesfrost.me/a-better-search-algorithm-for-nlp/) (2016)
+- [Twitter Visuals For ITV's EU Referendum Coverage](https://jamesfrost.me/itv-euref/) (2016)
+- [Twitter Visuals For The Queen's 90th Birthday](https://jamesfrost.me/q90/) (2016)
+- [Analysing Twitter Conversation About Jeremy Corbyn](https://jamesfrost.me/jeremy-corbyn-twitter-analysis/) (2015)
+- [Intelligently Artificial F.C. (RoboCup)](https://jamesfrost.me/robocup/) (2015)
+
+## Notes for agents
+
+- Prefer HTML pages; content is static Jekyll/GitHub Pages (mirrored on Cloudflare Pages).
+- Use the sitemap for full URL discovery; use this file for a curated overview.
+- Content-Signal policy is declared in robots.txt (search, training, and agent input currently allowed).
+- There is no public API, MCP server, or OAuth surface on this site.
