@@ -1,6 +1,42 @@
-# Cloudflare Pages only (GitHub Pages ignores this file).
-# Agent discovery via Link response headers (RFC 8288).
+# Cloudflare Pages only — GitHub Pages (jamesfrost.me) ignores this file entirely.
+# Applies to jfro.st / *.pages.dev after the next Pages deploy.
+
+# --- Global: security + agent discovery ---------------------------------
 /*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
   Link: </sitemap.xml>; rel="sitemap"
   Link: </feed.xml>; rel="alternate"; type="application/rss+xml"
   Link: </llms.txt>; rel="describedby"; type="text/plain"
+  # HTML and unlisted paths: always revalidate (safe for deploys)
+  Cache-Control: public, max-age=0, must-revalidate
+
+# --- Discovery files: short edge/browser cache ---------------------------
+/robots.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/llms.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/feed.xml
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# --- Static assets (not content-hashed: moderate TTL + revalidate) -------
+/css/*
+  Cache-Control: public, max-age=604800, must-revalidate
+
+/js/*
+  Cache-Control: public, max-age=604800, must-revalidate
+
+/img/*
+  Cache-Control: public, max-age=604800, must-revalidate
+
+# Fonts change rarely
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
