@@ -1,0 +1,6 @@
+# Allow all crawlers by default. AI-specific rules can be refined later.
+User-agent: *
+Allow: /
+
+# Canonical host while dual-publishing (GitHub Pages + Cloudflare Pages).
+Sitemap: https://jamesfrost.me/sitemap.xml

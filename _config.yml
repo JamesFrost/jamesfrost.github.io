@@ -111,6 +111,10 @@ defaults:
 # Use tags pages (not recommended if you are deploying via GitHub pages, only set to true if deploying locally with ruby)
 link-tags: false
 
+# Cloudflare Pages _headers is underscore-prefixed; include so Jekyll copies it to _site.
+include:
+  - _headers
+
 # Exclude these files from production site
 exclude:
   - CHANGELOG.md
@@ -121,6 +125,7 @@ exclude:
   - LICENSE
   - README.md
   - Vagrantfile
+
 
 # prose.io config
 prose:
@@ -174,5 +179,9 @@ prose:
           label: "Publish"
           help: "Check to publish post, uncheck to hide."
 
-gems:
+# jekyll-paginate: blog pagination
+# jekyll-sitemap: /sitemap.xml for crawlers and agent discovery (bundled with github-pages)
+plugins:
   - jekyll-paginate
+  - jekyll-sitemap
+
