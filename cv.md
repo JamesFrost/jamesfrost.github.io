@@ -1,6 +1,8 @@
 ---
 layout: page
 title: CV
+subtitle: "Curriculum vitae of James Frost, Site Reliability Engineer based in London."
+description: "Work history and experience — xAI, X (Twitter), Ably, and earlier roles in infrastructure and reliability."
 ---
 
 ***

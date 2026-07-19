@@ -2,17 +2,17 @@
 layout: post
 title: "Sky Sports Social Team of the Week"
 subtitle: "I know nothing about football, but I can analyse Twitter data."
-share-img: "/img/sky-sports-team-of-the-week/ssn-2.png"
+share-img: "/img/sky-sports-team-of-the-week/ssn-2.jpg"
 tags: [event, blurrt]
 ---
 
 The idea of a 'Team of the Week' is simple; choose a team of players to highlight the best performances of the past week. Usually, this team is chosen by a pundit. However, Sky Sports have teamed up with Blurrt to produce the 'Social Team of the Week', decided by Twitter conversation.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/sky-sports-team-of-the-week/ssn-2.jpg"}
+![Sky Sports News graphic for Social Team of the Week](){:class="img-responsive center-block"}{:data-normal="/img/sky-sports-team-of-the-week/ssn-2.jpg"}
 
 The players rating is calculated using Blurrt Score, a metric that measures audience reaction by looking at sentiment expressed as well as the volume of the conversation. From this rating, a team is formed by selecting the highest scoring players in their respective positions.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/sky-sports-team-of-the-week/team-14.jpg"}
+![Social Team of the Week starting eleven selected from Twitter sentiment](){:class="img-responsive center-block"}{:data-normal="/img/sky-sports-team-of-the-week/team-14.jpg"}
 
 <video autoplay loop class="img-responsive center-block">
   <source src="/img/sky-sports-team-of-the-week/ssn-1.webm" type="video/webm">

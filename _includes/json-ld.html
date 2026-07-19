@@ -1,0 +1,106 @@
+{% comment %}
+  Schema.org JSON-LD for agents and search engines.
+  WebSite + Person on every page; BlogPosting on posts; BreadcrumbList off the homepage.
+{% endcomment %}
+{% assign person_id = site.url | append: "/#person" %}
+{% assign website_id = site.url | append: "/#website" %}
+{% assign clean_path = page.url | remove: "/index.html" | remove: "index.html" %}
+{% if clean_path == "/" or clean_path == "" %}
+  {% assign is_home = true %}
+{% else %}
+  {% assign is_home = false %}
+{% endif %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": {{ website_id | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "url": {{ site.url | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "inLanguage": "en-GB",
+      "publisher": { "@id": {{ person_id | jsonify }} }
+    },
+    {
+      "@type": "Person",
+      "@id": {{ person_id | jsonify }},
+      "name": {{ site.author.name | jsonify }},
+      "url": {{ site.url | jsonify }},
+      "email": {{ site.author.email | jsonify }},
+      "jobTitle": "Site Reliability Engineer",
+      "description": {{ site.description | jsonify }},
+      "sameAs": [
+        "https://github.com/{{ site.author.github }}",
+        "https://www.linkedin.com/in/{{ site.author.linkedin }}"
+      ]
+      {% if site.avatar %},
+      "image": {{ site.url | append: site.avatar | jsonify }}
+      {% endif %}
+    }
+    {% if page.layout == "post" or page.id %}
+    ,{
+      "@type": "BlogPosting",
+      "@id": {{ site.url | append: page.url | jsonify }},
+      "headline": {{ page.title | jsonify }},
+      "url": {{ site.url | append: page.url | jsonify }},
+      "mainEntityOfPage": {{ site.url | append: page.url | jsonify }},
+      "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+      {% if page.last_modified_at %}
+      "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
+      {% else %}
+      "dateModified": {{ page.date | date_to_xmlschema | jsonify }},
+      {% endif %}
+      {% if page.subtitle %}
+      "description": {{ page.subtitle | jsonify }},
+      {% else %}
+      "description": {{ page.content | strip_html | truncatewords: 40 | jsonify }},
+      {% endif %}
+      "author": { "@id": {{ person_id | jsonify }} },
+      "publisher": { "@id": {{ person_id | jsonify }} },
+      "isPartOf": { "@id": {{ website_id | jsonify }} }
+      {% assign og_img = page.share-img | default: site.default-share-img | default: site.avatar %}
+      {% if og_img %},
+      "image": {{ site.url | append: og_img | jsonify }}
+      {% endif %}
+    }
+    {% endif %}
+    {% unless is_home %}
+    ,{
+      "@type": "BreadcrumbList",
+      "@id": {{ site.url | append: page.url | append: "#breadcrumb" | jsonify }},
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": {{ site.url | append: "/" | jsonify }}
+        }
+        {% if page.tag %}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tags",
+          "item": {{ site.url | append: "/tag/" | jsonify }}
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": {{ page.tag | jsonify }},
+          "item": {{ site.url | append: page.url | jsonify }}
+        }
+        {% else %}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ page.title | default: site.title | jsonify }},
+          "item": {{ site.url | append: page.url | jsonify }}
+        }
+        {% endif %}
+      ]
+    }
+    {% endunless %}
+  ]
+}
+</script>

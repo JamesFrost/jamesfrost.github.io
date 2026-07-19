@@ -2,6 +2,7 @@
 layout: post
 title: "A Better Search Algorithm For Natural Language Processing"
 subtitle: "Improving the performance of natural language processing search algorithms."
+share-img: "/img/a-better-search-algorithm-for-nlp/algorithm-comparison.png"
 tags: [blurrt, project]
 ---
 
@@ -14,7 +15,7 @@ This is problematic, as there aren’t any data structures/algorithms for effici
 To start, I first analysed the sequential search algorithm I was using, as any performance gains would be measured relative to it.
 
 ### Sequential Search Pseudocode
-![](){:class="img-responsive center-block"}{:data-normal="/img/a-better-search-algorithm-for-nlp/small-sequential-search-pseudo.png"}
+![Pseudocode for sequential regular-expression search](){:class="img-responsive center-block"}{:data-normal="/img/a-better-search-algorithm-for-nlp/small-sequential-search-pseudo.png"}
 
 ### Sequential Search Time Complexity
 <table>
@@ -49,7 +50,7 @@ As shown in the time complexity table above, the time complexity in the best and
 The improved algorithm works by splitting the lists of regular expressions up into chunks, and doing a single preliminary regular expression search for each chunk. If the preliminary search finds a match, then it will search for each regular expresion in the chunk individually.
 
 ### Chunking Algorithm Pseudocode
-![](){:class="img-responsive center-block"}{:data-normal="/img/a-better-search-algorithm-for-nlp/small-chunk-search-pseudo.png"}
+![Pseudocode for chunk-based regular-expression search](){:class="img-responsive center-block"}{:data-normal="/img/a-better-search-algorithm-for-nlp/small-chunk-search-pseudo.png"}
 
 ### Chunking Algorithm Time Complexity
 <table>
@@ -88,16 +89,16 @@ It is also highly unlikely that the worst case will even occur. This is because 
 
 Optimal chunk size is inversely proportional to the probability of a match. Once the probability of a match has been found, optimal chunk size can be calculated.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/a-better-search-algorithm-for-nlp/eq1.gif"}
+![Mathematical formula for sequential search time complexity](){:class="img-responsive center-block"}{:data-normal="/img/a-better-search-algorithm-for-nlp/eq1.gif"}
 <br>
-![](){:class="img-responsive center-block"}{:data-normal="/img/a-better-search-algorithm-for-nlp/eq2.gif"}
+![Mathematical formula for chunk search time complexity](){:class="img-responsive center-block"}{:data-normal="/img/a-better-search-algorithm-for-nlp/eq2.gif"}
 <br>
 To test the relationship between chunk size and processing time, I recorded processing time for a range of chunk sizes. I searched against text that had an equal probability of 0 - 3 matches. The graph below shows the results of this test.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/a-better-search-algorithm-for-nlp/chunk-size-processing-time.png"}
+![Chart of processing time versus chunk size](){:class="img-responsive center-block"}{:data-normal="/img/a-better-search-algorithm-for-nlp/chunk-size-processing-time.png"}
 
 As the graph shows, chunk size can have a dramatic effect on processing time.
 
 Once I had calculated the probability of a match, I used the formula above to calculate the optimal chunk size for my application. With an appropriate chunk size chosen, the chunking algorithm has reduced processing time by ~90% compared to sequential search, effectively solving the performance issues we were having.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/a-better-search-algorithm-for-nlp/algorithm-comparison.png"}
+![Chart comparing sequential search and chunk search performance](){:class="img-responsive center-block"}{:data-normal="/img/a-better-search-algorithm-for-nlp/algorithm-comparison.png"}

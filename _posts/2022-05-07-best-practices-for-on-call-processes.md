@@ -2,7 +2,7 @@
 layout: post
 title: "Best Practices for On-Call Processes"
 subtitle: "Save your engineers sleep"
-share-img: "/img/sky-sports-team-of-the-week/ssn-2.png"
+share-img: "/img/best-practices-for-on-call-processes/pagerbeauty.webp"
 tags: []
 ---
 
@@ -116,7 +116,7 @@ Communicating who is on-call is vital, as the company needs to know who is curre
 
 PagerBeauty is an excellent tool if you use PagerDuty. I recommend that you build a small webpage that uses PagerBeauty to show who is on-call for all of your on-call rotations.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/best-practices-for-on-call-processes/pagerbeauty.webp"}
+![PagerBeauty dashboard showing on-call schedule](){:class="img-responsive center-block"}{:data-normal="/img/best-practices-for-on-call-processes/pagerbeauty.webp"}
 A typical page to show who is assigned a shift in the Ably Realtime team.
 {: .text-center }
 
@@ -139,7 +139,7 @@ The objective of the incident management framework is for team members to be mor
 - We are less likely to forget any cleanup actions, as everything is documented.
 - We are able to better organize incident post-mortems and remedial actions.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/best-practices-for-on-call-processes/optimizing-on-call-process-matrix-table.webp"}
+![Matrix of on-call process symptoms and improvements](){:class="img-responsive center-block"}{:data-normal="/img/best-practices-for-on-call-processes/optimizing-on-call-process-matrix-table.webp"}
 
 # Final thoughts
 I am regularly on-call, and I cannot emphasize strongly enough that you need a solid process and attention to detail. Not only does it simplify my job, but I'm confident that I am not going to be wrenched out of a deep sleep to deal with an unnecessary page, or to troubleshoot an issue without documentation.

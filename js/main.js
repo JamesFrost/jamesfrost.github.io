@@ -7,6 +7,10 @@ function initSite() {
     if (src) {
       img.setAttribute("src", src);
       img.setAttribute("loading", "lazy");
+      // Keep markdown-provided alt; only fill a last-resort label if missing
+      if (!img.getAttribute("alt")) {
+        img.setAttribute("alt", "");
+      }
       img.removeAttribute("data-normal");
     }
   }

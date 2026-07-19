@@ -2,6 +2,7 @@
 layout: post
 title: "Analysing Twitter Conversation About Jeremy Corbyn"
 subtitle: "Identifying and explaining areas of conversation around Jeremy Corbyn."
+share-img: "/img/jeremy-corbyn-twitter-analysis/constituencies.png"
 tags: [project, report]
 ---
 
@@ -14,13 +15,13 @@ The dataset consisted of ~1000 geotagged Tweets about Jeremy Corbyn. The Tweets 
 ### Noise Removal
 After some initial testing, it became apparent that there were a significant number of neutral Tweets, i.e  the ‘sentiment_score’ attribute was 0.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/histogram1.png"}
+![Histogram of tweet sentiment scores including neutral tweets](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/histogram1.png"}
 
 This disproportionate number of neutral Tweets was greatly affecting results. Tweets scored as neutral are generally objective - for example, ‘Corbyn's Momentum group moves to block influence of hard-left parties’ is objective and as such sentiment scored as neutral. As I aim to identify demographics and their opinions, it is more relevant to analyse subjective Tweets. As such, I chose to filter out all Tweets with neutral sentiment.
 
 After removing the neutral tweets, the datasets sentiment score was far less skewed.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/histogram2.png"}
+![Histogram of tweet sentiment scores after filtering neutral tweets](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/histogram2.png"}
 
 ### Anomaly/Outlier Removal
 I used clustering in my data analysis, specifically K Means clustering, which is very sensitive to outliers. Therefore to get the best results I had to thoroughly remove outliers.
@@ -29,22 +30,22 @@ I first identified outliers based on the follower count of the Twitter user that
 
 Further analysis of the data revealed that the vast majority of the Tweets were sent from one location (namely, the UK), with the rest being scattered throughout the world.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/scatter1.png"}
+![Scatter plot of tweet sentiment analysis features](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/scatter1.png"}
 
 After removing location based outliers, the dataset was far less dispersed.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/scatter2.png"}
+![Second scatter plot of tweet sentiment analysis features](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/scatter2.png"}
 
 ## Data Analysis
 
 ### Coordinate Clustering
 To identify the initial key areas where the Tweets originated from, I did a K Means Clustering on both the latitude and longitude attributes.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster1.png"}
+![Cluster analysis visualisation for Corbyn-related tweets, cluster 1](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster1.png"}
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster1table1.png"}
+![Summary table for tweet cluster 1](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster1table1.png"}
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster1table2.png"}
+![Additional statistics table for tweet cluster 1](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster1table2.png"}
 
 Four out of the five cluster centers fall within the UK, with only cluster one falling on Paris. Cluster one also only has one member, which strongly suggests that the conversation around Jeremy Corbyn is concentrated to mainland United Kingdom. This is what you would expect to see for conversation about a UK member of parliament.
 
@@ -91,7 +92,7 @@ When comparing the number of cases in the cluster to the population of the local
 
 However, when looking at the spread of points from the centroid, it becomes clear that while clusters 2, 3 and 4 are approximately equally homogeneous, cluster number 5 is significantly less homogeneous. We can tell this as the cases in cluster 5 are more spread out along the vertical.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster1scatter1.png"}
+![Scatter plot of points in tweet cluster 1](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster1scatter1.png"}
 
 This means that the points that make up cluster 5 are dispersed over a greater area, potentially spanning a greater section of the population. This, coupled with the fact that cluster 5 had the smallest number of cases in the UK, suggests that England/Wales are more opinionated about Jeremy Corbyn than Scotland.
 
@@ -100,30 +101,30 @@ This small amount of Tweets about Corbyn from Scotland could be explained by the
 ### Coordinate Clustering With Sentiment Score
 To identify the locations where users are expressing the same sentiment, I did a K Means Cluster on latitude, longitude and sentiment score.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster2.png"}
+![Cluster analysis visualisation for Corbyn-related tweets, cluster 2](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster2.png"}
 
 Note: Icons for clusters two and three overlap
 {: .text-center }
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster2table1.png"}
+![Summary table for tweet cluster 2](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster2table1.png"}
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster2table2.png"}
+![Additional statistics table for tweet cluster 2](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster2table2.png"}
 
 As shown by the map above, cluster 4 suggests that the north of the UK has a negative opinion about Jeremy Corbyn. Once again, this could be explained by the fact that Labour lost all of its support in the 2015 election. This lack of support could explain why it has the lowest sentiment out of all of the clusters (-4); you wouldn’t expect opposing parties to be expressing positive sentiment about each other.
 
 Cluster 1 suggests that London has a positive opinion about Jeremy Corbyn (+3). This could be explained by the fact that London has a high concentration of Labour seats. London is also mostly surrounded by Conservative constituencies, which can be expected to express negative opinions about the opposition, potentially explaining why cluster 2 has a negative sentiment (-3).
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/londonconstituencies.png"}
+![Map of London constituencies related to tweet analysis](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/londonconstituencies.png"}
 Map of London Constituencies - Red constituencies are Labour seats.
 {: .text-center }
 
 Cluster five is positive, with a sentiment score of +3. A potential explanation for this is that the surrounding areas are Labour constituencies.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/constituencies.png"}
+![Map of UK constituencies related to tweet analysis](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/constituencies.png"}
 
 When we look at cluster density, we see that all clusters are approximately equally homogeneous, with the exception of cluster three which is denser. This may offer some explanation as to why cluster three is the only cluster with an overall neutral sentiment.
 
-![](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster2scatter1.png"}
+![Scatter plot of points in tweet cluster 2](){:class="img-responsive center-block"}{:data-normal="/img/jeremy-corbyn-twitter-analysis/cluster2scatter1.png"}
 
 ## Conclusion
 Overall I believe the analysis of the dataset has yielded quality results, as all conclusions drawn have mapped directly onto a plausible real world explanation, suggesting the analysis accurately reflects how people feel about Jeremy Corbyn, and that social media data can accurately reflect occurrences in the real world.
